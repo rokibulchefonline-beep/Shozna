@@ -1,0 +1,129 @@
+/* ==========================================================================
+   Shozna — typography
+   Single Unified Font: Raleway
+   An elegant, high-contrast geometric sans-serif with bespoke luxury character,
+   widely celebrated in fine dining, boutique hospitality, and haute couture.
+   Loaded in the document head; fallbacks are chosen to match metrics closely.
+   ========================================================================== */
+
+:root {
+  --font-family:  "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI",
+                  Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-family);
+  --font-accent:  var(--font-family);
+  --font-text:    var(--font-family);
+
+  /* Fluid scale, ~1.25 minor-third at small sizes opening to ~1.333 large. */
+  --t-eyebrow: clamp(0.6875rem, 0.66rem + 0.14vw, 0.8125rem);
+  --t-small:   clamp(0.8125rem, 0.79rem + 0.12vw, 0.875rem);
+  --t-body:    clamp(0.9375rem, 0.90rem + 0.20vw, 1.0625rem);
+  --t-lead:    clamp(1.0625rem, 1.00rem + 0.35vw, 1.25rem);
+  --t-h4:      clamp(1.1875rem, 1.08rem + 0.45vw, 1.45rem);
+  --t-h3:      clamp(1.4375rem, 1.25rem + 0.80vw, 2.0rem);
+  --t-h2:      clamp(1.95rem, 1.55rem + 2.25vw, 3.4rem);
+  --t-h1:      clamp(2.1rem, 1.40rem + 2.50vw, 3.65rem);
+
+  --lh-tight:  1.12;
+  --lh-snug:   1.24;
+  --lh-body:   1.70;
+
+  /* Raleway luxury metrics: refined tracking on headings, open tracking on eyebrows */
+  --tr-display: 0.02em;
+  --tr-body:     0.01em;
+  --tr-eyebrow:  0.22em;
+}
+
+/* --- Base ---------------------------------------------------------------- */
+
+body {
+  font-family: var(--font-text);
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+  letter-spacing: var(--tr-body);
+  color: var(--c-cream-soft);
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* --- Display ------------------------------------------------------------- */
+
+h1, h2, h3, h4,
+.display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-display);
+  color: var(--c-cream);
+  text-wrap: balance;
+  margin: 0;
+}
+
+h1 { font-size: var(--t-h1); font-weight: 400; letter-spacing: 0.03em; }
+h2 { font-size: var(--t-h2); font-weight: 400; letter-spacing: 0.02em; }
+h3 { font-size: var(--t-h3); line-height: var(--lh-snug); font-weight: 500; }
+h4 { font-size: var(--t-h4); line-height: var(--lh-snug); font-weight: 600; }
+
+/* Accented phrase inside a heading — set in true italic, brass. */
+.display em,
+h1 em, h2 em, h3 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--c-brass);
+}
+
+/* --- Eyebrow / kicker ---------------------------------------------------- */
+
+.eyebrow {
+  font-family: var(--font-accent);
+  font-size: var(--t-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--tr-eyebrow);
+  text-transform: uppercase;
+  color: var(--c-brass);
+  margin: 0;
+  max-width: none;   /* never inherit the p measure cap — it forces a wrap */
+}
+
+/* --- Body ---------------------------------------------------------------- */
+
+p {
+  margin: 0 0 var(--s-2);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+p:last-child { margin-bottom: 0; }
+
+.lead {
+  font-size: var(--t-lead);
+  line-height: 1.6;
+  color: var(--c-cream-soft);
+}
+
+.small { font-size: var(--t-small); }
+
+/* Tabular lining figures for phone numbers, prices, hours and the award timeline. */
+.numeric,
+time,
+.tel {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1, "kern" 1;
+}
+
+/* Oldstyle figures read with classic elegance inside display elements. */
+.display .numeric {
+  font-variant-numeric: oldstyle-nums;
+  font-feature-settings: "onum" 1;
+}
+
+strong, b { font-weight: 600; color: var(--c-cream); }
+em, i     { font-style: italic; }
+
+a { color: inherit; }
+
+::selection {
+  background: var(--c-brass);
+  color: var(--c-ink);
+}

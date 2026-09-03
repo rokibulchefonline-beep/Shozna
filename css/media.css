@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Shozna — media manifest
+   Every asset the page uses, declared once. Swapping the draft server for
+   local files in media/ is one edit per asset; the markup never changes.
+   ========================================================================== */
+
+:root {
+  /* --- Section backgrounds ---------------------------------------------- */
+  --img-dining-bg:       url("https://www.srsdraft.co.uk/shozna-2026/assets/images/background/image-7.jpg");
+  --img-venue-bg:        url("https://www.srsdraft.co.uk/shozna-2026/assets/images/resource/gallery-1.jpg");
+  --img-footer-bg:       url("https://www.srsdraft.co.uk/shozna-2026/assets/images/background/image-4.jpg");
+
+  /* --- Rooms ------------------------------------------------------------- */
+  /* --- Rooms ------------------------------------------------------------- */
+  --img-dining-upstairs: url("../media/first-floor.jpg"), url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8569.jpg");
+  --img-ground-floor:    url("../media/ground-floor.jpg"), url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8536.jpg");
+
+  /* --- Chef -------------------------------------------------------------- */
+  --img-chef:            url("../media/chef-jay.jpg"), url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8844.jpg");
+
+  /* --- Signature dishes --------------------------------------------------- */
+  --img-dish-1:          url("../media/dish-1.jpg"), url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8674.jpg");
+  --img-dish-2:          url("../media/dish-2.jpg"), url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8665.jpg");
+  --img-dish-3:          url("../media/dish-3.jpg"), url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8660.jpg");
+  --img-dish-4:          url("https://www.srsdraft.co.uk/shozna-2026/assets/images/resource/menu-image-14.jpg");
+  --img-dish-5:          url("https://www.srsdraft.co.uk/shozna-2026/assets/images/resource/menu-image-15.jpg");
+  --img-dish-6:          url("https://www.srsdraft.co.uk/shozna-2026/assets/images/resource/menu-image-16.jpg");
+
+  /* --- Gallery ------------------------------------------------------------ */
+  --img-gallery-1:       url("../media/first-floor.jpg"), url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8569.jpg");
+  --img-gallery-2:       url("../media/ground-floor.jpg"), url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8536.jpg");
+  --img-gallery-3:       url("../media/chef-jay.jpg"), url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8844.jpg");
+  --img-gallery-4:       url("../media/dish-1.jpg"), url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8674.jpg");
+  --img-gallery-5:       url("../media/dish-2.jpg"), url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8665.jpg");
+  --img-gallery-6:       url("../media/dish-3.jpg"), url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8660.jpg");
+}
+
+/* Serving from this repo instead: run ./tools/fetch-source.sh, then repoint
+   each value at its local copy, e.g. --img-chef: url("media/image-5.jpg"); */
