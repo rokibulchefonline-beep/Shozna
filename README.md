@@ -66,18 +66,35 @@ reachable when the page was built.
 The phone number `01634 840 646` was read off the design screenshot — please
 verify it before the site goes live.
 
-## Images
+## Media
 
-Sections reference `media/` files through a `--media-src` custom property, so a
-missing image degrades to a brass gradient rather than a broken image icon.
-Expected filenames:
+All assets are declared once in `css/media.css` as custom properties and
+referenced from the markup via `var(--img-*)`, so moving between the live draft
+server and local files is one edit per asset.
 
-```
-media/hero.jpg
-media/dining-room-upstairs.jpg
-media/restaurant-ground-floor.jpg
-media/chef-jay-ahmed.jpg
-media/dish-bengal-bemisal.jpg
-media/dish-karachi-mughal-special.jpg
-media/dish-jaipuri-lamb.jpg
-```
+| Slot                | Asset                     |
+| ------------------- | ------------------------- |
+| Hero background     | `shozna-bg-video.mp4`     |
+| Hero poster         | `1N7A8668.jpg`            |
+| Dining room upstairs| `1N7A8668.jpg`            |
+| Ground floor        | `1N7A8501.jpg`            |
+| Chef                | `1N7A8669.jpg`            |
+| Dish 1              | `1N7A8531.jpg`            |
+| Dish 2              | `1N7A8768.jpg`            |
+| Dish 3              | `1N7A8677.jpg`            |
+| Gallery             | `1N7A8564/8554/8573.jpg`  |
+
+**The slot mapping needs checking.** The filenames are opaque and the build
+environment cannot reach the server to look at them, so they were assigned in
+the order supplied. Reshuffle the values in `css/media.css` once you can see
+which photo is which — and give the gallery tiles real `aria-label` text
+describing what each one shows.
+
+The images are currently hotlinked from `srsdraft.co.uk`. Before go-live, run
+`./tools/fetch-source.sh` and repoint the manifest at local `media/` copies.
+
+## Logo
+
+The header and footer use a text wordmark with the tagline from the
+restaurant's sign. Supply the actual logo artwork as an SVG or PNG to replace
+it — it is a drawn mark and has not been recreated here.

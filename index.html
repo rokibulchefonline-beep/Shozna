@@ -10,7 +10,7 @@
 <meta property="og:title" content="Shozna — Indian &amp; Bangladeshi Restaurant in Rochester">
 <meta property="og:description" content="Two floors, one kitchen. Dine in Rochester or order for collection.">
 <meta property="og:type" content="restaurant">
-<meta property="og:image" content="media/hero.jpg">
+<meta property="og:image" content="https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8668.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/type.css">
 <link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/media.css">
 <link rel="stylesheet" href="css/site.css">
 </head>
 
@@ -33,13 +34,14 @@
 <header class="site-header" id="header">
   <a class="brand" href="#top">
     Shozna
-    <small>Rochester</small>
+    <small>Indian &amp; Bangladeshi Cuisine</small>
   </a>
 
   <nav class="nav" id="nav" aria-label="Primary">
     <a href="#about">About</a>
     <a href="#menus">Menus</a>
     <a href="#private-dining">Private Dining</a>
+    <a href="#gallery">Gallery</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
     <a class="btn btn--solid" href="#contact">Book a Table</a>
@@ -61,7 +63,11 @@
      TODO: set --media-src to the hero image once media/ is populated.
      ====================================================================== -->
 <section class="hero" id="top">
-  <div class="hero__bg" style="--media-src: url('media/hero.jpg')"></div>
+  <video class="hero__video" id="heroVideo"
+         autoplay muted loop playsinline preload="metadata"
+         poster="https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8668.jpg">
+    <source src="https://www.srsdraft.co.uk/shozna-2026/shozna-bg-video.mp4" type="video/mp4">
+  </video>
   <div class="hero__scrim"></div>
 
   <div class="hero__inner">
@@ -108,7 +114,7 @@
     <div class="grid-2">
 
       <article class="card split-card" data-reveal>
-        <div class="media media--wide" style="--media-src: url('media/dining-room-upstairs.jpg')"></div>
+        <div class="media media--wide" style="--media-src: var(--img-dining-upstairs)"></div>
         <div class="split-card__head">
           <h3 class="split-card__title">The Shozna Dining Room — Upstairs</h3>
         </div>
@@ -128,7 +134,7 @@
       </article>
 
       <article class="card split-card" data-reveal>
-        <div class="media media--wide" style="--media-src: url('media/restaurant-ground-floor.jpg')"></div>
+        <div class="media media--wide" style="--media-src: var(--img-ground-floor)"></div>
         <div class="split-card__head">
           <h3 class="split-card__title">The Restaurant — Ground Floor</h3>
         </div>
@@ -208,7 +214,7 @@
     <div class="chef">
 
       <figure class="chef__figure" data-reveal>
-        <div class="media media--tall" style="--media-src: url('media/chef-jay-ahmed.jpg')"></div>
+        <div class="media media--tall" style="--media-src: var(--img-chef)"></div>
         <figcaption class="chef__year">
           <b class="numeric">1996</b>
           <span>Since</span>
@@ -291,7 +297,7 @@
     <div class="grid-3">
 
       <article class="dish card" data-reveal>
-        <div class="media media--square" style="--media-src: url('media/dish-bengal-bemisal.jpg')"></div>
+        <div class="media media--square" style="--media-src: var(--img-dish-1)"></div>
         <h3>Bengal Bemisal</h3>
         <p class="small">
           <!-- TODO: replace with the dish description from the existing build. -->
@@ -299,7 +305,7 @@
       </article>
 
       <article class="dish card" data-reveal>
-        <div class="media media--square" style="--media-src: url('media/dish-karachi-mughal-special.jpg')"></div>
+        <div class="media media--square" style="--media-src: var(--img-dish-2)"></div>
         <h3>Karachi Mughal Special</h3>
         <p class="small">
           <!-- TODO: replace with the dish description from the existing build. -->
@@ -307,7 +313,7 @@
       </article>
 
       <article class="dish card" data-reveal>
-        <div class="media media--square" style="--media-src: url('media/dish-jaipuri-lamb.jpg')"></div>
+        <div class="media media--square" style="--media-src: var(--img-dish-3)"></div>
         <h3>Jaipuri Lamb</h3>
         <p class="small">
           <!-- TODO: replace with the dish description from the existing build. -->
@@ -382,6 +388,30 @@
       </article>
 
     </div>
+  </div>
+</section>
+
+
+<!-- ======================================================================
+     GALLERY
+     ====================================================================== -->
+<section class="section" id="gallery">
+  <div class="shell">
+
+    <div class="section-head" data-reveal>
+      <p class="eyebrow eyebrow--ruled">The Rooms</p>
+      <h2>Inside <em>Shozna</em></h2>
+    </div>
+
+    <div class="gallery" data-reveal>
+      <div class="media media--wide" style="--media-src: var(--img-gallery-1)" role="img"
+           aria-label="Inside the Shozna restaurant"></div>
+      <div class="media media--wide" style="--media-src: var(--img-gallery-2)" role="img"
+           aria-label="Inside the Shozna restaurant"></div>
+      <div class="media media--wide" style="--media-src: var(--img-gallery-3)" role="img"
+           aria-label="Inside the Shozna restaurant"></div>
+    </div>
+
   </div>
 </section>
 
@@ -466,6 +496,7 @@
           <li><a href="#menus">Menus</a></li>
           <li><a href="#menus">Order for Collection</a></li>
           <li><a href="#private-dining">Private Dining</a></li>
+          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>

@@ -74,6 +74,18 @@
     });
   }
 
+  /* --- Hero video ---------------------------------------------------------- */
+
+  // Autoplaying video is motion; honour the user's reduced-motion setting by
+  // pausing it and falling back to the poster frame.
+  var video = document.getElementById('heroVideo');
+
+  if (video && reduced) {
+    video.autoplay = false;
+    video.removeAttribute('autoplay');
+    video.pause();
+  }
+
   /* --- Footer year --------------------------------------------------------- */
 
   var year = document.getElementById('year');

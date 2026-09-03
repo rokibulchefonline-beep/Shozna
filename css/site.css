@@ -168,16 +168,14 @@ a:hover > .media::after,
   isolation: isolate;
 }
 
-.hero__bg {
+.hero__video {
   position: absolute;
   inset: 0;
   z-index: -2;
-  background:
-    linear-gradient(135deg, rgba(198, 161, 91, 0.2), rgba(10, 9, 8, 0.6)),
-    var(--c-black);
-  background-image: var(--media-src, none);
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--c-black);
 }
 
 .hero__scrim {
@@ -346,6 +344,16 @@ a:hover > .media::after,
 }
 
 .tel-link:hover { color: var(--c-brass-bright); }
+
+/* --- Gallery ---------------------------------------------------------------- */
+
+.gallery {
+  display: grid;
+  gap: var(--s-2);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
+.gallery .media { aspect-ratio: 4 / 3; }
 
 /* --- FAQ ------------------------------------------------------------------- */
 
