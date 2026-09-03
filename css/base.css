@@ -1,0 +1,179 @@
+/* ==========================================================================
+   Shozna — reset, layout primitives and shared components
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--c-ink);
+  overflow-x: hidden;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button, input, select, textarea { font: inherit; color: inherit; }
+
+/* --- Layout -------------------------------------------------------------- */
+
+.shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.shell--wide { max-width: var(--shell-wide); }
+
+.section {
+  padding-block: var(--section-y);
+  position: relative;
+}
+
+.section--sunken { background: var(--c-ink-sunken); }
+.section--raised { background: var(--c-ink-raised); }
+
+.stack > * + * { margin-top: var(--s-2); }
+.stack-lg > * + * { margin-top: var(--s-4); }
+
+.grid-2 {
+  display: grid;
+  gap: clamp(var(--s-3), 3vw, var(--s-5));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+}
+
+.grid-3 {
+  display: grid;
+  gap: clamp(var(--s-3), 3vw, var(--s-5));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+}
+
+/* --- Section heading block ----------------------------------------------- */
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-2);
+  text-align: center;
+  margin-bottom: clamp(var(--s-4), 5vw, var(--s-6));
+}
+
+.section-head p { margin-inline: auto; }
+
+/* Hairline flourish either side of an eyebrow. */
+.eyebrow--ruled {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.eyebrow--ruled::before,
+.eyebrow--ruled::after {
+  content: "";
+  width: clamp(1.5rem, 6vw, 3.5rem);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--c-brass-deep), transparent);
+}
+
+/* --- Card ---------------------------------------------------------------- */
+
+.card {
+  background: var(--c-ink-raised);
+  border: 1px solid var(--c-hairline);
+  padding: clamp(var(--s-3), 3vw, var(--s-5));
+  position: relative;
+  transition: border-color var(--dur) var(--ease-out),
+              transform var(--dur) var(--ease-out);
+}
+
+.card:hover {
+  border-color: var(--c-brass);
+  transform: translateY(-2px);
+}
+
+/* Large ordinal numeral used on the paired cards. */
+.card__index {
+  font-family: var(--font-display);
+  font-size: var(--t-h3);
+  font-variant-numeric: lining-nums;
+  color: var(--c-brass-deep);
+  line-height: 1;
+}
+
+/* --- Buttons ------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-1);
+  padding: 0.9em 2em;
+  font-family: var(--font-text);
+  font-size: var(--t-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--c-brass);
+  cursor: pointer;
+  transition: background var(--dur) var(--ease-out),
+              color var(--dur) var(--ease-out),
+              border-color var(--dur) var(--ease-out);
+}
+
+.btn--solid {
+  background: var(--c-brass);
+  color: var(--c-ink);
+}
+
+.btn--solid:hover {
+  background: var(--c-brass-bright);
+  border-color: var(--c-brass-bright);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--c-brass);
+}
+
+.btn--ghost:hover {
+  background: var(--c-brass);
+  color: var(--c-ink);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+/* --- Focus --------------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--c-brass-bright);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--s-2);
+  top: -4rem;
+  z-index: 999;
+  padding: var(--s-1) var(--s-2);
+  background: var(--c-brass);
+  color: var(--c-ink);
+  text-decoration: none;
+  transition: top var(--dur-fast) var(--ease-out);
+}
+
+.skip-link:focus { top: var(--s-2); }
