@@ -10,13 +10,13 @@
   --c-ink:          #100e0c;   /* page background */
   --c-ink-raised:   #17140f;   /* cards, panels */
   --c-ink-sunken:   #0c0a08;   /* alternating bands */
-  --c-hairline:     rgba(198, 161, 91, 0.22);
+  --c-hairline:     rgba(197, 168, 128, 0.24);
   --c-hairline-dim: rgba(255, 250, 240, 0.09);
 
   /* --- Brass accent ------------------------------------------------------ */
-  --c-brass:        #c6a15b;
-  --c-brass-bright: #e0c489;
-  --c-brass-deep:   #8a6d33;
+  --c-brass:        #c5a880;
+  --c-brass-bright: #dcc4a2;
+  --c-brass-deep:   #8c7550;
 
   /* --- Type colour ------------------------------------------------------- */
   --c-cream:        #f4efe6;

@@ -38,63 +38,37 @@ sandboxed environment that domain must be on the network allowlist first.
 
 ## Status
 
-- [x] Design tokens and premium type system (Playfair Display + Inter)
-- [x] Base layout primitives, cards, buttons, focus states
-- [x] Single-page `index.html` — all sections from the existing build
-- [x] Sticky header, mobile drawer, FAQ accordion, scroll reveal
-- [ ] Real copy — placeholders marked `TODO` in `index.html`
-- [ ] Media — `media/` is empty; run `./tools/fetch-source.sh`
+- [x] Premium type system (Playfair Display + Inter) on the brand gold `#c5a880`
+- [x] Single-page `index.html` with the real site content
+- [x] Header with Menus dropdown, mobile nav drawer and info drawer
+- [x] Video hero, six-dish carousel, award timeline, FAQ, footer
+- [x] Restaurant JSON-LD with real address, geo, phones and opening hours
+- [ ] Two content gaps remain (below)
+- [ ] Assets are hotlinked; localise before go-live
 
-## Content still to fill in
+## Content
 
-Every item below is marked with a `TODO` comment in `index.html`. They were
-left as placeholders rather than invented, because the source site was not
-reachable when the page was built.
+All copy now comes from the existing build. Two gaps remain:
 
-| Section        | Needed                                                   |
-| -------------- | -------------------------------------------------------- |
-| Hero           | Intro paragraph                                          |
-| Two floors     | Section intro, both room descriptions                    |
-| Menus          | Both menu descriptions, real menu/ordering links         |
-| Chef           | Jay Ahmed's biography                                    |
-| Awards         | Narrative, and six real year/award timeline rows         |
-| Dishes         | Three dish descriptions                                  |
-| Venue details  | Addresses, opening hours for both rooms                  |
-| FAQ            | All ten answers                                          |
-| Footer         | Real social profile URLs                                 |
+- **Batera Jolmol** — the source itself says Jay's full description is still to
+  be written. Marked `TODO` in `index.html`.
+- **Social links** — the source points at bare `facebook.com`, `instagram.com`
+  etc. rather than Shozna's own profiles. Marked `TODO` in the footer.
 
-The phone number `01634 840 646` was read off the design screenshot — please
-verify it before the site goes live.
+## Key details
+
+| | |
+| --- | --- |
+| Address | 153 Maidstone Road, Rochester, Kent, ME1 1RR |
+| Restaurant | 01634 847 847 / 01634 849 849 |
+| Private dining | 01634 846 846 |
+| Email | admin@shozna.com |
+| Evening | Sun–Thu 5–11pm; Fri–Sat 5pm–12am |
+| Lunch | 12:00–1:30pm, takeaway and party bookings only |
 
 ## Media
 
-All assets are declared once in `css/media.css` as custom properties and
-referenced from the markup via `var(--img-*)`, so moving between the live draft
-server and local files is one edit per asset.
-
-| Slot                | Asset                     |
-| ------------------- | ------------------------- |
-| Hero background     | `shozna-bg-video.mp4`     |
-| Hero poster         | `1N7A8668.jpg`            |
-| Dining room upstairs| `1N7A8668.jpg`            |
-| Ground floor        | `1N7A8501.jpg`            |
-| Chef                | `1N7A8669.jpg`            |
-| Dish 1              | `1N7A8531.jpg`            |
-| Dish 2              | `1N7A8768.jpg`            |
-| Dish 3              | `1N7A8677.jpg`            |
-| Gallery             | `1N7A8564/8554/8573.jpg`  |
-
-**The slot mapping needs checking.** The filenames are opaque and the build
-environment cannot reach the server to look at them, so they were assigned in
-the order supplied. Reshuffle the values in `css/media.css` once you can see
-which photo is which — and give the gallery tiles real `aria-label` text
-describing what each one shows.
-
-The images are currently hotlinked from `srsdraft.co.uk`. Before go-live, run
-`./tools/fetch-source.sh` and repoint the manifest at local `media/` copies.
-
-## Logo
-
-The header and footer use a text wordmark with the tagline from the
-restaurant's sign. Supply the actual logo artwork as an SVG or PNG to replace
-it — it is a drawn mark and has not been recreated here.
+Assets are declared once in `css/media.css` and referenced via `var(--img-*)`,
+so localising is one edit per asset with no markup change. They are currently
+hotlinked from `srsdraft.co.uk`; run `./tools/fetch-source.sh` and repoint the
+manifest before go-live so the site does not depend on the draft server.

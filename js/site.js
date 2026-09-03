@@ -1,12 +1,13 @@
 /* ==========================================================================
    Shozna — page behaviour
-   Sticky header state, mobile nav, scroll reveal, footer year.
    ========================================================================== */
 
 (function () {
   'use strict';
 
-  /* --- Sticky header ---------------------------------------------------- */
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- Sticky header ------------------------------------------------------ */
 
   var header = document.getElementById('header');
 
@@ -18,44 +19,146 @@
     window.addEventListener('scroll', setStuck, { passive: true });
   }
 
-  /* --- Mobile navigation ------------------------------------------------- */
+  /* --- Drawers ------------------------------------------------------------
+     The nav drawer and the info drawer share one backdrop, so opening either
+     closes the other and only one Escape handler is needed.
+     ------------------------------------------------------------------------ */
 
-  var toggle = document.getElementById('navToggle');
-  var nav = document.getElementById('nav');
+  var backdrop = document.getElementById('backdrop');
 
-  if (toggle && nav) {
-    var setNav = function (open) {
-      nav.dataset.open = String(open);
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    };
+  var drawers = [
+    { panel: document.getElementById('nav'),     toggle: document.getElementById('navToggle'),
+      labels: ['Open menu', 'Close menu'] },
+    { panel: document.getElementById('infoBar'), toggle: document.getElementById('infoToggle'),
+      labels: ['Open restaurant information', 'Close restaurant information'] }
+  ].filter(function (d) { return d.panel && d.toggle; });
 
-    setNav(false);
-
-    toggle.addEventListener('click', function () {
-      setNav(nav.dataset.open !== 'true');
-    });
-
-    // Close after following an in-page link.
-    nav.addEventListener('click', function (e) {
-      if (e.target.closest('a')) setNav(false);
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && nav.dataset.open === 'true') {
-        setNav(false);
-        toggle.focus();
-      }
-    });
+  function anyOpen() {
+    return drawers.some(function (d) { return d.panel.dataset.open === 'true'; });
   }
 
-  /* --- Scroll reveal ------------------------------------------------------ */
+  function setDrawer(drawer, open) {
+    drawer.panel.dataset.open = String(open);
+    drawer.toggle.setAttribute('aria-expanded', String(open));
+    drawer.toggle.setAttribute('aria-label', drawer.labels[open ? 1 : 0]);
+
+    if (drawer.panel.hasAttribute('aria-hidden')) {
+      drawer.panel.setAttribute('aria-hidden', String(!open));
+    }
+
+    if (backdrop) {
+      var showing = anyOpen();
+      backdrop.hidden = !showing;
+      // Let the element paint before transitioning opacity.
+      window.requestAnimationFrame(function () {
+        backdrop.dataset.open = String(showing);
+      });
+    }
+
+    document.body.style.overflow = anyOpen() ? 'hidden' : '';
+  }
+
+  function closeAll() {
+    drawers.forEach(function (d) { setDrawer(d, false); });
+  }
+
+  drawers.forEach(function (drawer) {
+    setDrawer(drawer, false);
+
+    drawer.toggle.addEventListener('click', function () {
+      var next = drawer.panel.dataset.open !== 'true';
+      closeAll();
+      if (next) setDrawer(drawer, true);
+    });
+
+    // Following a link inside a drawer should close it.
+    drawer.panel.addEventListener('click', function (e) {
+      if (e.target.closest('a')) closeAll();
+    });
+  });
+
+  var infoClose = document.getElementById('infoClose');
+  if (infoClose) infoClose.addEventListener('click', closeAll);
+  if (backdrop) backdrop.addEventListener('click', closeAll);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape' || !anyOpen()) return;
+    var open = drawers.filter(function (d) { return d.panel.dataset.open === 'true'; })[0];
+    closeAll();
+    if (open) open.toggle.focus();
+  });
+
+  /* --- Menus dropdown ------------------------------------------------------ */
+
+  var dropToggles = document.querySelectorAll('.nav-drop__toggle');
+
+  dropToggles.forEach(function (toggle) {
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      dropToggles.forEach(function (t) { t.setAttribute('aria-expanded', 'false'); });
+      toggle.setAttribute('aria-expanded', String(!open));
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('.nav-drop')) return;
+    dropToggles.forEach(function (t) { t.setAttribute('aria-expanded', 'false'); });
+  });
+
+  /* --- Dish carousel -------------------------------------------------------- */
+
+  document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
+    var track = carousel.querySelector('[data-carousel-track]');
+    var prev = carousel.querySelector('[data-carousel-prev]');
+    var next = carousel.querySelector('[data-carousel-next]');
+    var frame;
+
+    if (!track || !prev || !next) return;
+
+    function step() {
+      var cards = track.children;
+      if (cards.length > 1) return cards[1].offsetLeft - cards[0].offsetLeft;
+      return cards.length ? cards[0].getBoundingClientRect().width : track.clientWidth;
+    }
+
+    function update() {
+      var max = Math.max(0, track.scrollWidth - track.clientWidth);
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = max <= 2 || track.scrollLeft >= max - 2;
+    }
+
+    function scrollBy(direction) {
+      track.scrollBy({
+        left: direction * step(),
+        behavior: reduced ? 'auto' : 'smooth'
+      });
+    }
+
+    prev.addEventListener('click', function () { scrollBy(-1); });
+    next.addEventListener('click', function () { scrollBy(1); });
+
+    track.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      e.preventDefault();
+      scrollBy(e.key === 'ArrowLeft' ? -1 : 1);
+    });
+
+    track.addEventListener('scroll', function () {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(update);
+    }, { passive: true });
+
+    window.addEventListener('resize', update);
+    update();
+  });
+
+  /* --- Scroll reveal --------------------------------------------------------- */
 
   var revealables = document.querySelectorAll('[data-reveal]');
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (!revealables.length) {
-    // nothing to do
+    // nothing to reveal
   } else if (reduced || !('IntersectionObserver' in window)) {
     revealables.forEach(function (el) { el.classList.add('is-visible'); });
   } else {
@@ -68,16 +171,14 @@
     }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
 
     revealables.forEach(function (el, i) {
-      // Stagger siblings slightly so grids cascade rather than pop.
       el.style.transitionDelay = (i % 3) * 90 + 'ms';
       observer.observe(el);
     });
   }
 
-  /* --- Hero video ---------------------------------------------------------- */
+  /* --- Hero video ------------------------------------------------------------- */
 
-  // Autoplaying video is motion; honour the user's reduced-motion setting by
-  // pausing it and falling back to the poster frame.
+  // Autoplaying video is motion; under reduced motion show the poster instead.
   var video = document.getElementById('heroVideo');
 
   if (video && reduced) {
@@ -86,8 +187,19 @@
     video.pause();
   }
 
-  /* --- Footer year --------------------------------------------------------- */
+  /* --- Back to top ------------------------------------------------------------- */
 
-  var year = document.getElementById('year');
-  if (year) year.textContent = String(new Date().getFullYear());
+  var scrollTop = document.getElementById('scrollTop');
+
+  if (scrollTop) {
+    var toggleTop = function () {
+      scrollTop.dataset.visible = String(window.scrollY > 600);
+    };
+    toggleTop();
+    window.addEventListener('scroll', toggleTop, { passive: true });
+
+    scrollTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+    });
+  }
 }());

@@ -1,35 +1,38 @@
 /* ==========================================================================
    Shozna — media manifest
-   Every image and video the page uses is declared once here, so switching
-   between the live draft server and local files in media/ is a single edit
-   per asset rather than a hunt through the markup.
-
-   NOTE ON MAPPING: the gallery filenames are opaque (1N7A####.jpg), and the
-   build environment cannot reach them to look. They are assigned to slots in
-   the order they were supplied — please check each one against the photo it
-   actually shows and reshuffle as needed.
+   Every asset the page uses, declared once. Swapping the draft server for
+   local files in media/ is one edit per asset; the markup never changes.
    ========================================================================== */
 
 :root {
-  /* --- Rooms ------------------------------------------------------------ */
-  --img-dining-upstairs: url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8668.jpg");
-  --img-ground-floor:    url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8501.jpg");
+  /* --- Section backgrounds ---------------------------------------------- */
+  --img-dining-bg:       url("https://www.srsdraft.co.uk/shozna-2026/assets/images/background/image-7.jpg");
+  --img-venue-bg:        url("https://www.srsdraft.co.uk/shozna-2026/assets/images/resource/gallery-1.jpg");
+  --img-footer-bg:       url("https://www.srsdraft.co.uk/shozna-2026/assets/images/background/image-4.jpg");
 
-  /* --- Chef ------------------------------------------------------------- */
-  --img-chef:            url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8669.jpg");
+  /* --- Rooms ------------------------------------------------------------- */
+  --img-dining-upstairs: url("https://www.srsdraft.co.uk/shozna-2026/assets/images/resource/gallery-1.jpg");
+  --img-ground-floor:    url("https://www.srsdraft.co.uk/shozna-2026/assets/images/resource/gallery-3.jpg");
 
-  /* --- Signature dishes -------------------------------------------------- */
-  --img-dish-1:          url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8531.jpg");
-  --img-dish-2:          url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8768.jpg");
-  --img-dish-3:          url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8677.jpg");
+  /* --- Chef -------------------------------------------------------------- */
+  --img-chef:            url("https://www.srsdraft.co.uk/shozna-2026/assets/images/background/image-5.jpg");
 
-  /* --- Gallery ----------------------------------------------------------- */
-  --img-gallery-1:       url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8564.jpg");
-  --img-gallery-2:       url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8554.jpg");
-  --img-gallery-3:       url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8573.jpg");
+  /* --- Signature dishes --------------------------------------------------- */
+  --img-dish-1:          url("https://www.srsdraft.co.uk/shozna-2026/assets/images/resource/menu-image-11.jpg");
+  --img-dish-2:          url("https://www.srsdraft.co.uk/shozna-2026/assets/images/resource/menu-image-12.jpg");
+  --img-dish-3:          url("https://www.srsdraft.co.uk/shozna-2026/assets/images/resource/menu-image-13.jpg");
+  --img-dish-4:          url("https://www.srsdraft.co.uk/shozna-2026/assets/images/resource/menu-image-14.jpg");
+  --img-dish-5:          url("https://www.srsdraft.co.uk/shozna-2026/assets/images/resource/menu-image-15.jpg");
+  --img-dish-6:          url("https://www.srsdraft.co.uk/shozna-2026/assets/images/resource/menu-image-16.jpg");
+
+  /* --- Gallery ------------------------------------------------------------ */
+  --img-gallery-1:       url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8668.jpg");
+  --img-gallery-2:       url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8501.jpg");
+  --img-gallery-3:       url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8669.jpg");
+  --img-gallery-4:       url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8531.jpg");
+  --img-gallery-5:       url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8564.jpg");
+  --img-gallery-6:       url("https://www.srsdraft.co.uk/shozna-2026/assets/images/gallery/1N7A8573.jpg");
 }
 
-/* To serve the assets from this repo instead, run ./tools/fetch-source.sh and
-   replace the URLs above with their local equivalents, e.g.
-     --img-chef: url("media/1N7A8669.jpg");
-   Nothing in the markup needs to change. */
+/* Serving from this repo instead: run ./tools/fetch-source.sh, then repoint
+   each value at its local copy, e.g. --img-chef: url("media/image-5.jpg"); */
