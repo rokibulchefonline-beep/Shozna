@@ -81,6 +81,7 @@ h1 em, h2 em, h3 em {
   text-transform: uppercase;
   color: var(--c-brass);
   margin: 0;
+  max-width: none;   /* never inherit the p measure cap — it forces a wrap */
 }
 
 /* --- Body ---------------------------------------------------------------- */
