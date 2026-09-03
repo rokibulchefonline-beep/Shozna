@@ -36,6 +36,38 @@ The script writes the source HTML to `.source/` and downloads every referenced
 image into `media/`. It requires `www.srsdraft.co.uk` to be reachable — in a
 sandboxed environment that domain must be on the network allowlist first.
 
+## Changing the fonts
+
+Two edits, always both — a face has to be **loaded** and **named**:
+
+1. **Load** — swap the `fonts.googleapis.com` `<link>` in `index.html` `<head>`
+   for the URL below that matches the pair you want.
+2. **Name** — in `css/type.css`, change the number on the two ACTIVE PAIR lines:
+
+   ```css
+   --font-display: var(--pair-2-display);
+   --font-text:    var(--pair-2-text);
+   ```
+
+Nothing else in the project hard-codes a font family, so those two lines drive
+every heading, paragraph, button and nav item.
+
+| Pair | Display + Text | `<link>` URL |
+| --- | --- | --- |
+| 1 | Playfair Display + Inter | `https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap` |
+| 2 | Cormorant Garamond + Jost | `https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap` |
+| 3 | Marcellus + Lato | `https://fonts.googleapis.com/css2?family=Marcellus&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap` |
+| 4 | Italiana + Karla | `https://fonts.googleapis.com/css2?family=Italiana&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap` |
+| 5 | Fraunces + Inter | `https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap` |
+| 6 | Cinzel + Montserrat | `https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap` |
+
+Only load the pair you are using — every extra family is a real download on
+every page view.
+
+Headings are set at weight 400 deliberately; the elegance comes from stroke
+contrast, not heft. If you switch to a lower-contrast display face you may want
+to raise that in `css/type.css`.
+
 ## Status
 
 - [x] Premium type system (Playfair Display + Inter) on the brand gold `#c5a880`

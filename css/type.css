@@ -1,16 +1,55 @@
 /* ==========================================================================
-   Shozna — typography
-   Display: Playfair Display (editorial serif, high contrast)
-   Text:    Inter (neutral grotesque, excellent at small sizes)
-   Loaded in the document head; fallbacks are chosen to match metrics closely
-   so the page does not reflow badly before webfonts land.
+   HOW TO CHANGE THE FONTS
+
+   Two edits, always both — the face has to be loaded AND named:
+
+   1. LOAD it — index.html, the fonts.googleapis.com <link> in <head>.
+   2. NAME it — the ACTIVE PAIR block below.
+
+   Nothing else in the project hard-codes a font family, so those two
+   variables drive every heading, paragraph, button, nav item and price.
    ========================================================================== */
 
 :root {
-  --font-display: "Playfair Display", "Iowan Old Style", "Palatino Linotype",
-                  Palatino, Georgia, "Times New Roman", serif;
-  --font-text:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-                  Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* --- Presets -----------------------------------------------------------
+     Each pair is display (headings) + text (body, nav, buttons).
+     Defining them all costs nothing; only the pair referenced by the ACTIVE
+     block below is ever used, and only the faces in the <link> get
+     downloaded.
+     ---------------------------------------------------------------------- */
+
+  /* Editorial serif + neutral grotesque. Current. */
+  --pair-1-display: "Playfair Display", "Iowan Old Style", Palatino, Georgia, serif;
+  --pair-1-text:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Fine, high-contrast, fine-dining. */
+  --pair-2-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --pair-2-text:    "Jost", "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Inscriptional caps, heritage — suits the thirty-years story. */
+  --pair-3-display: "Marcellus", Georgia, "Times New Roman", serif;
+  --pair-3-text:    "Lato", "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Fashion-magazine. Dramatic; wants generous whitespace. */
+  --pair-4-display: "Italiana", Georgia, "Times New Roman", serif;
+  --pair-4-text:    "Karla", "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Warm and characterful. */
+  --pair-5-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --pair-5-text:    "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Carved capitals, formal. */
+  --pair-6-display: "Cinzel", Georgia, "Times New Roman", serif;
+  --pair-6-text:    "Montserrat", "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* === ACTIVE PAIR — change the number on these two lines ==================
+     Then update the <link> in index.html to load that pair's faces.
+     Matching <link> URLs are listed in README.md.
+     ====================================================================== */
+
+  --font-display: var(--pair-1-display);
+  --font-text:    var(--pair-1-text);
 
   /* Fluid scale, ~1.25 minor-third at small sizes opening to ~1.333 large. */
   --t-eyebrow: clamp(0.6875rem, 0.66rem + 0.14vw, 0.8125rem);
