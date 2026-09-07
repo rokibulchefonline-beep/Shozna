@@ -2547,12 +2547,11 @@ body[data-page="home"] .nav__home-link {
   z-index: 1;
   background: linear-gradient(
     to top,
-    #080706 0%,
-    #080706 12%,
-    rgba(8, 7, 6, 0.96) 28%,
-    rgba(8, 7, 6, 0.86) 45%,
-    rgba(8, 7, 6, 0.30) 72%,
-    rgba(8, 7, 6, 0.04) 100%
+    rgba(8, 7, 6, 0.95) 0%,
+    rgba(8, 7, 6, 0.82) 20%,
+    rgba(8, 7, 6, 0.38) 38%,
+    rgba(8, 7, 6, 0.08) 55%,
+    transparent 70%
   );
   pointer-events: none;
   transition: background var(--dur) var(--ease-out);
@@ -2585,6 +2584,7 @@ body[data-page="home"] .nav__home-link {
   color: #ffffff;
   margin: 0 0 0.6rem;
   line-height: 1.25;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
   transition: color var(--dur-fast) var(--ease-out);
 }
 
@@ -2596,6 +2596,7 @@ body[data-page="home"] .nav__home-link {
   font-size: 0.825rem;
   line-height: 1.65;
   color: #c5bfb6;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
   margin: 0;
 }
 
