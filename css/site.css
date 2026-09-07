@@ -2526,9 +2526,12 @@ body[data-page="home"] .nav__home-link {
   text-decoration: none;
   border: 1px solid rgba(197, 168, 128, 0.22);
   border-radius: 4px;
+  background-color: #080706;
   background-image: var(--media-src, none);
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
+  background-clip: padding-box;
   isolation: isolate;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
@@ -2541,14 +2544,18 @@ body[data-page="home"] .nav__home-link {
   content: "";
   position: absolute;
   inset: 0;
+  border-radius: inherit;
   z-index: 1;
   background: linear-gradient(
     to top,
-    rgba(8, 7, 6, 0.98) 0%,
-    rgba(8, 7, 6, 0.88) 38%,
-    rgba(8, 7, 6, 0.35) 70%,
-    rgba(8, 7, 6, 0.05) 100%
+    #080706 0%,
+    #080706 12%,
+    rgba(8, 7, 6, 0.96) 28%,
+    rgba(8, 7, 6, 0.86) 45%,
+    rgba(8, 7, 6, 0.30) 72%,
+    rgba(8, 7, 6, 0.04) 100%
   );
+  pointer-events: none;
   transition: background var(--dur) var(--ease-out);
 }
 
