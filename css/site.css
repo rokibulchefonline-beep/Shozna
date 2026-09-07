@@ -2810,19 +2810,19 @@ body[data-page="home"] .nav__home-link {
   height: 0 !important;
 }
 
-/* 5 images visible in a row on desktop */
+/* 3 images visible in one screen on desktop */
 .food-slide {
   position: relative;
-  flex: 0 0 calc((100% - 4 * 1.5rem) / 5);
+  flex: 0 0 calc((100% - 2 * 1.5rem) / 3);
   border: none !important; /* No borders per user request */
   outline: none;
-  border-radius: 4px;
+  border-radius: 6px;
   background: #0d0c0a;
   overflow: hidden;
   scroll-snap-align: center;
-  transform: scale(0.9);
-  opacity: 0.65;
-  filter: brightness(0.8);
+  transform: scale(0.92);
+  opacity: 0.72;
+  filter: brightness(0.85);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
               opacity 0.5s ease,
@@ -2834,7 +2834,7 @@ body[data-page="home"] .nav__home-link {
 
 /* Middle / center highlighted image - bigger size & nice UI animation */
 .food-slide.is-center {
-  transform: scale(1.18);
+  transform: scale(1.12);
   opacity: 1;
   filter: brightness(1.05);
   z-index: 10;
@@ -2843,9 +2843,9 @@ body[data-page="home"] .nav__home-link {
 
 /* Adjacent cards slightly visible */
 .food-slide.is-adjacent {
-  transform: scale(1.0);
-  opacity: 0.88;
-  filter: brightness(0.95);
+  transform: scale(0.95);
+  opacity: 0.82;
+  filter: brightness(0.92);
   z-index: 5;
 }
 
@@ -2855,7 +2855,7 @@ body[data-page="home"] .nav__home-link {
 }
 
 .food-slide.is-center:hover {
-  transform: scale(1.22);
+  transform: scale(1.15);
 }
 
 .food-slide__image-wrap {
@@ -2864,7 +2864,7 @@ body[data-page="home"] .nav__home-link {
   width: 100%;
   overflow: hidden;
   background: #050505;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 .food-slide__img {
@@ -2883,11 +2883,14 @@ body[data-page="home"] .nav__home-link {
 /* Mobile & Tablet Optimizations */
 @media (max-width: 63.99rem) and (min-width: 44rem) {
   /* 3 images in row on tablet */
+  .food-carousel__track {
+    gap: 1.25rem;
+  }
   .food-slide {
-    flex: 0 0 calc((100% - 2 * 1.5rem) / 3);
+    flex: 0 0 calc((100% - 2 * 1.25rem) / 3);
   }
   .food-slide.is-center {
-    transform: scale(1.12);
+    transform: scale(1.08);
   }
 }
 
