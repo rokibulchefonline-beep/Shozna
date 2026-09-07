@@ -2889,14 +2889,13 @@ body[data-page="home"] .nav__home-link {
 }
 
 .food-gallery-footer {
-  margin-top: clamp(2rem, 3.5vw, 3rem);
+  margin-top: clamp(1.5rem, 2.5vw, 2.25rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(197, 168, 128, 0.18);
+  border-top: none;
 }
 
 .food-gallery-footer__badge {
