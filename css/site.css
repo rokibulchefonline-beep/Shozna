@@ -2524,19 +2524,18 @@ body[data-page="home"] .nav__home-link {
   padding: clamp(1.5rem, 2.5vw, 2.25rem);
   scroll-snap-align: start;
   text-decoration: none;
-  border: 1px solid rgba(197, 168, 128, 0.22);
-  border-radius: 4px;
+  border: none !important;
+  outline: none;
+  border-radius: 6px;
   background-color: #080706;
   background-image: var(--media-src, none);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-clip: padding-box;
   isolation: isolate;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
   transition: transform var(--dur) var(--ease-out),
-              border-color var(--dur) var(--ease-out),
               box-shadow var(--dur) var(--ease-out);
 }
 
@@ -2561,7 +2560,6 @@ body[data-page="home"] .nav__home-link {
 
 .dish-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(228, 197, 144, 0.65);
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 20px rgba(228, 197, 144, 0.15);
 }
 
