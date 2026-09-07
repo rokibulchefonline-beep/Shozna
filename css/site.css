@@ -1836,6 +1836,36 @@ body[data-page="home"] .nav__home-link {
   line-height: 1.6;
   margin: 0;
   padding-top: 1px;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+a.award-desc {
+  cursor: pointer;
+  display: inline;
+}
+
+a.award-desc:hover,
+a.award-desc:focus-visible {
+  color: #e4c590;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(228, 197, 144, 0.45);
+}
+
+.award-link-icon {
+  display: inline-block;
+  font-size: 0.85em;
+  margin-left: 0.2rem;
+  color: #e4c590;
+  opacity: 0.65;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  vertical-align: middle;
+}
+
+a.award-desc:hover .award-link-icon {
+  opacity: 1;
+  transform: translate(2px, -2px);
 }
 
 /* --- Dishes ---------------------------------------------------------------- */
