@@ -1316,6 +1316,15 @@ body[data-page="home"] .nav__home-link {
    MENUS SECTION (Matching Reference)
    ========================================================================== */
 
+#menus {
+  position: relative;
+  isolation: isolate;
+  background: #0b0a08 url("../media/pattern-4.png") repeat;
+  background-size: 180px;
+  border-top: 1px solid rgba(197, 168, 128, 0.16);
+  border-bottom: 1px solid rgba(197, 168, 128, 0.16);
+}
+
 .menus-section-title {
   font-family: var(--font-accent);
   font-size: clamp(1.75rem, 3.5vw, 2.75rem);
@@ -1331,7 +1340,8 @@ body[data-page="home"] .nav__home-link {
 }
 
 .menu-card {
-  background: rgba(10, 9, 8, 0.75);
+  background: rgba(12, 10, 8, 0.88);
+  backdrop-filter: blur(6px);
   border: 1px solid rgba(197, 168, 128, 0.28);
   padding: clamp(1.6rem, 2.8vw, 2.6rem);
   position: relative;
