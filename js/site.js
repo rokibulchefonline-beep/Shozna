@@ -140,8 +140,8 @@
 
   document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
     var track = carousel.querySelector('[data-carousel-track]');
-    var prev = carousel.querySelector('[data-carousel-prev]');
-    var next = carousel.querySelector('[data-carousel-next]');
+    var prev = carousel.querySelector('[data-carousel-prev]') || (carousel.closest('section') && carousel.closest('section').querySelector('[data-carousel-prev]'));
+    var next = carousel.querySelector('[data-carousel-next]') || (carousel.closest('section') && carousel.closest('section').querySelector('[data-carousel-next]'));
     var frame;
 
     if (!track || !prev || !next) return;
