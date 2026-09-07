@@ -2605,7 +2605,7 @@ body[data-page="home"] .nav__home-link {
   transition: all var(--dur-fast) var(--ease-out);
 }
 
-.food-gallery-nav-btn:hover:not(:disabled) {
+.food-gallery-nav-btn:hover {
   background: #e4c590;
   border-color: #e4c590;
   color: #0a0908;
@@ -2613,59 +2613,77 @@ body[data-page="home"] .nav__home-link {
   box-shadow: 0 6px 20px rgba(228, 197, 144, 0.4);
 }
 
-.food-gallery-nav-btn:disabled {
-  opacity: 0.3;
-  cursor: default;
-  transform: none;
-}
-
 .food-carousel {
   position: relative;
+  overflow: visible;
 }
 
+/* Zero scrollbars, no horizontal scrollbar line (red box fix) */
 .food-carousel__track {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(min(100%, 17rem), 1fr);
-  gap: 1.25rem;
+  display: flex;
+  gap: 1.5rem;
   overflow-x: auto;
+  overflow-y: visible;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding-bottom: 0.5rem;
-  scrollbar-width: thin;
-  scrollbar-color: var(--c-brass-deep) transparent;
+  padding-block: 2.75rem;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  -webkit-overflow-scrolling: touch;
 }
 
-@media (min-width: 36rem) and (max-width: 61.99rem) {
-  .food-carousel__track {
-    grid-auto-columns: calc((100% - 1.25rem) / 2);
-  }
+.food-carousel__track::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
-@media (min-width: 62rem) {
-  .food-carousel__track {
-    grid-auto-columns: calc((100% - 3 * 1.25rem) / 4);
-  }
-}
-
+/* 5 images visible in a row on desktop */
 .food-slide {
   position: relative;
-  border: 1px solid rgba(197, 168, 128, 0.25);
-  border-radius: 2px;
+  flex: 0 0 calc((100% - 4 * 1.5rem) / 5);
+  border: none !important; /* No borders per user request */
+  outline: none;
+  border-radius: 4px;
   background: #0d0c0a;
   overflow: hidden;
-  display: flex;
-  scroll-snap-align: start;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
-  transition: transform var(--dur) var(--ease-out),
-              border-color var(--dur) var(--ease-out),
-              box-shadow var(--dur) var(--ease-out);
+  scroll-snap-align: center;
+  transform: scale(0.9);
+  opacity: 0.65;
+  filter: brightness(0.8);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+              opacity 0.5s ease,
+              filter 0.5s ease,
+              box-shadow 0.5s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Middle / center highlighted image - bigger size & nice UI animation */
+.food-slide.is-center {
+  transform: scale(1.18);
+  opacity: 1;
+  filter: brightness(1.05);
+  z-index: 10;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.9), 0 0 25px rgba(228, 197, 144, 0.25);
+}
+
+/* Adjacent cards slightly visible */
+.food-slide.is-adjacent {
+  transform: scale(1.0);
+  opacity: 0.88;
+  filter: brightness(0.95);
+  z-index: 5;
 }
 
 .food-slide:hover {
-  transform: translateY(-4px);
-  border-color: #e4c590;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+  opacity: 1;
+  filter: brightness(1.08);
+}
+
+.food-slide.is-center:hover {
+  transform: scale(1.22);
 }
 
 .food-slide__image-wrap {
@@ -2673,7 +2691,8 @@ body[data-page="home"] .nav__home-link {
   aspect-ratio: 4 / 3;
   width: 100%;
   overflow: hidden;
-  background: #000;
+  background: #050505;
+  border-radius: 4px;
 }
 
 .food-slide__img {
@@ -2681,11 +2700,40 @@ body[data-page="home"] .nav__home-link {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform var(--dur-slow) var(--ease-out);
+  pointer-events: none;
+  transition: transform 0.6s var(--ease-out);
 }
 
 .food-slide:hover .food-slide__img {
-  transform: scale(1.08);
+  transform: scale(1.06);
+}
+
+/* Mobile & Tablet Optimizations */
+@media (max-width: 63.99rem) and (min-width: 44rem) {
+  /* 3 images in row on tablet */
+  .food-slide {
+    flex: 0 0 calc((100% - 2 * 1.5rem) / 3);
+  }
+  .food-slide.is-center {
+    transform: scale(1.12);
+  }
+}
+
+@media (max-width: 43.99rem) {
+  /* Mobile version: large center card with peeking sides */
+  .food-carousel__track {
+    gap: 1rem;
+    padding-block: 2rem;
+  }
+  .food-slide {
+    flex: 0 0 clamp(230px, 72vw, 300px);
+    transform: scale(0.88);
+    opacity: 0.55;
+  }
+  .food-slide.is-center {
+    transform: scale(1.08);
+    opacity: 1;
+  }
 }
 
 .food-gallery-footer {

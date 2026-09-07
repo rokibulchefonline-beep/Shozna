@@ -183,6 +183,188 @@
     update();
   });
 
+  /* --- Luxury Auto-Sliding Food Gallery Carousel (Center Highlight) ------- */
+
+  var foodGallery = document.querySelector('[data-food-gallery]');
+  if (foodGallery) {
+    var fgTrack = foodGallery.querySelector('[data-food-gallery-track]');
+    var fgPrevBtn = document.querySelector('[data-food-gallery-prev]');
+    var fgNextBtn = document.querySelector('[data-food-gallery-next]');
+
+    if (fgTrack) {
+      var fgSlides = Array.from(fgTrack.children);
+      var fgTotal = fgSlides.length;
+      var fgBaseCount = 8;
+      var fgCurrentIndex = fgBaseCount;
+      var fgTimer = null;
+      var fgIsHovered = false;
+      var fgIsTouching = false;
+      var fgIsScrolling = false;
+      var fgScrollTimeout = null;
+
+      function getStep() {
+        if (fgSlides.length > 1) {
+          return fgSlides[1].offsetLeft - fgSlides[0].offsetLeft;
+        }
+        return fgSlides[0].offsetWidth;
+      }
+
+      function updateCenterItem() {
+        var trackRect = fgTrack.getBoundingClientRect();
+        var centerX = trackRect.left + trackRect.width / 2;
+        var closestIdx = 0;
+        var minDiff = Infinity;
+
+        fgSlides.forEach(function (slide, idx) {
+          var rect = slide.getBoundingClientRect();
+          var slideCenter = rect.left + rect.width / 2;
+          var diff = Math.abs(centerX - slideCenter);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIdx = idx;
+          }
+        });
+
+        fgSlides.forEach(function (slide, idx) {
+          slide.classList.remove('is-center', 'is-adjacent');
+          if (idx === closestIdx) {
+            slide.classList.add('is-center');
+          } else if (idx === closestIdx - 1 || idx === closestIdx + 1) {
+            slide.classList.add('is-adjacent');
+          }
+        });
+
+        fgCurrentIndex = closestIdx;
+
+        if (!fgIsScrolling) {
+          var step = getStep();
+          if (fgCurrentIndex >= fgBaseCount * 2) {
+            fgTrack.scrollLeft -= fgBaseCount * step;
+            fgCurrentIndex -= fgBaseCount;
+          } else if (fgCurrentIndex < fgBaseCount) {
+            fgTrack.scrollLeft += fgBaseCount * step;
+            fgCurrentIndex += fgBaseCount;
+          }
+        }
+      }
+
+      function scrollToSlide(idx, smooth) {
+        if (idx < 0 || idx >= fgTotal) return;
+        var slide = fgSlides[idx];
+        var targetLeft = slide.offsetLeft - (fgTrack.clientWidth - slide.clientWidth) / 2;
+        fgIsScrolling = true;
+        fgTrack.scrollTo({
+          left: targetLeft,
+          behavior: smooth && !reduced ? 'smooth' : 'auto'
+        });
+        clearTimeout(fgScrollTimeout);
+        fgScrollTimeout = setTimeout(function () {
+          fgIsScrolling = false;
+          updateCenterItem();
+        }, 450);
+      }
+
+      function slideNext() {
+        var nextIdx = fgCurrentIndex + 1;
+        if (nextIdx >= fgTotal) {
+          fgTrack.scrollLeft -= fgBaseCount * getStep();
+          nextIdx -= fgBaseCount;
+        }
+        scrollToSlide(nextIdx, true);
+      }
+
+      function slidePrev() {
+        var prevIdx = fgCurrentIndex - 1;
+        if (prevIdx < 0) {
+          fgTrack.scrollLeft += fgBaseCount * getStep();
+          prevIdx += fgBaseCount;
+        }
+        scrollToSlide(prevIdx, true);
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+        if (reduced) return;
+        fgTimer = setInterval(function () {
+          if (!fgIsHovered && !fgIsTouching && !document.hidden) {
+            slideNext();
+          }
+        }, 3200);
+      }
+
+      function stopAutoplay() {
+        if (fgTimer) {
+          clearInterval(fgTimer);
+          fgTimer = null;
+        }
+      }
+
+      window.requestAnimationFrame(function () {
+        scrollToSlide(fgBaseCount, false);
+        updateCenterItem();
+      });
+
+      fgTrack.addEventListener('scroll', function () {
+        window.requestAnimationFrame(updateCenterItem);
+      }, { passive: true });
+
+      fgSlides.forEach(function (slide, idx) {
+        slide.addEventListener('click', function () {
+          scrollToSlide(idx, true);
+          startAutoplay();
+        });
+      });
+
+      if (fgPrevBtn) {
+        fgPrevBtn.addEventListener('click', function () {
+          slidePrev();
+          startAutoplay();
+        });
+      }
+
+      if (fgNextBtn) {
+        fgNextBtn.addEventListener('click', function () {
+          slideNext();
+          startAutoplay();
+        });
+      }
+
+      foodGallery.addEventListener('mouseenter', function () {
+        fgIsHovered = true;
+        stopAutoplay();
+      });
+
+      foodGallery.addEventListener('mouseleave', function () {
+        fgIsHovered = false;
+        startAutoplay();
+      });
+
+      fgTrack.addEventListener('touchstart', function () {
+        fgIsTouching = true;
+        stopAutoplay();
+      }, { passive: true });
+
+      fgTrack.addEventListener('touchend', function () {
+        fgIsTouching = false;
+        startAutoplay();
+      }, { passive: true });
+
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+          stopAutoplay();
+        } else {
+          startAutoplay();
+        }
+      });
+
+      window.addEventListener('resize', function () {
+        updateCenterItem();
+      });
+
+      startAutoplay();
+    }
+  }
+
   /* --- Scroll reveal --------------------------------------------------------- */
 
   var revealables = document.querySelectorAll('[data-reveal]');

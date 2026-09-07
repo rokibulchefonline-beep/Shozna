@@ -804,12 +804,12 @@
       </div>
 
       <div class="food-gallery-head__controls">
-        <button class="food-gallery-nav-btn" data-carousel-prev type="button" aria-label="Previous dishes" disabled>
+        <button class="food-gallery-nav-btn" data-food-gallery-prev type="button" aria-label="Previous dishes">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M15 18l-6-6 6-6"/>
           </svg>
         </button>
-        <button class="food-gallery-nav-btn" data-carousel-next type="button" aria-label="Next dishes">
+        <button class="food-gallery-nav-btn" data-food-gallery-next type="button" aria-label="Next dishes">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M9 18l6-6-6-6"/>
           </svg>
@@ -817,62 +817,132 @@
       </div>
     </div>
 
-    <div class="carousel food-gallery-carousel" data-carousel>
-      <div class="carousel__track food-gallery-track" data-carousel-track tabindex="0" role="region" aria-label="Shozna food gallery">
+    <div class="carousel food-gallery-carousel" data-food-gallery>
+      <div class="food-carousel__track food-gallery-track" data-food-gallery-track tabindex="0" role="region" aria-label="Shozna food gallery">
 
-        <!-- Slide 1 -->
+        <!-- Set 1 (Slides 1-8) -->
         <article class="food-slide">
           <div class="food-slide__image-wrap">
-            <img src="media/food-1.jpg" alt="Shozna Grand Feast" class="food-slide__img" loading="lazy">
+            <img src="media/food-1.jpg" alt="Shozna culinary dish 1" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-2.jpg" alt="Shozna culinary dish 2" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-3.jpg" alt="Shozna culinary dish 3" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-4.jpg" alt="Shozna culinary dish 4" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-5.jpg" alt="Shozna culinary dish 5" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-6.jpg" alt="Shozna culinary dish 6" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-7.jpg" alt="Shozna culinary dish 7" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-8.jpg" alt="Shozna culinary dish 8" class="food-slide__img" loading="lazy">
           </div>
         </article>
 
-        <!-- Slide 2 -->
+        <!-- Set 2 (Slides 9-16) - Active center starting group -->
         <article class="food-slide">
           <div class="food-slide__image-wrap">
-            <img src="media/food-2.jpg" alt="Karahi Mughal Special" class="food-slide__img" loading="lazy">
+            <img src="media/food-1.jpg" alt="Shozna culinary dish 1" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-2.jpg" alt="Shozna culinary dish 2" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-3.jpg" alt="Shozna culinary dish 3" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-4.jpg" alt="Shozna culinary dish 4" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-5.jpg" alt="Shozna culinary dish 5" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-6.jpg" alt="Shozna culinary dish 6" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-7.jpg" alt="Shozna culinary dish 7" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-8.jpg" alt="Shozna culinary dish 8" class="food-slide__img" loading="lazy">
           </div>
         </article>
 
-        <!-- Slide 3 -->
+        <!-- Set 3 (Slides 17-24) - Seamless forward buffer -->
         <article class="food-slide">
           <div class="food-slide__image-wrap">
-            <img src="media/food-3.jpg" alt="Shozna Dum Biryani" class="food-slide__img" loading="lazy">
+            <img src="media/food-1.jpg" alt="Shozna culinary dish 1" class="food-slide__img" loading="lazy">
           </div>
         </article>
-
-        <!-- Slide 4 -->
         <article class="food-slide">
           <div class="food-slide__image-wrap">
-            <img src="media/food-4.jpg" alt="Bengal Fish Speciality" class="food-slide__img" loading="lazy">
+            <img src="media/food-2.jpg" alt="Shozna culinary dish 2" class="food-slide__img" loading="lazy">
           </div>
         </article>
-
-        <!-- Slide 5 -->
         <article class="food-slide">
           <div class="food-slide__image-wrap">
-            <img src="media/food-5.jpg" alt="Aromatic Sabzi Karahi" class="food-slide__img" loading="lazy">
+            <img src="media/food-3.jpg" alt="Shozna culinary dish 3" class="food-slide__img" loading="lazy">
           </div>
         </article>
-
-        <!-- Slide 6 -->
         <article class="food-slide">
           <div class="food-slide__image-wrap">
-            <img src="media/food-6.jpg" alt="Artisan Starter Selection" class="food-slide__img" loading="lazy">
+            <img src="media/food-4.jpg" alt="Shozna culinary dish 4" class="food-slide__img" loading="lazy">
           </div>
         </article>
-
-        <!-- Slide 7 -->
         <article class="food-slide">
           <div class="food-slide__image-wrap">
-            <img src="media/food-7.jpg" alt="Jaipuri Spiced Lamb" class="food-slide__img" loading="lazy">
+            <img src="media/food-5.jpg" alt="Shozna culinary dish 5" class="food-slide__img" loading="lazy">
           </div>
         </article>
-
-        <!-- Slide 8 -->
         <article class="food-slide">
           <div class="food-slide__image-wrap">
-            <img src="media/food-8.jpg" alt="Celebration Dining Spread" class="food-slide__img" loading="lazy">
+            <img src="media/food-6.jpg" alt="Shozna culinary dish 6" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-7.jpg" alt="Shozna culinary dish 7" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-8.jpg" alt="Shozna culinary dish 8" class="food-slide__img" loading="lazy">
           </div>
         </article>
 
