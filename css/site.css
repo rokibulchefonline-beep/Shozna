@@ -1672,7 +1672,7 @@ body[data-page="home"] .nav__home-link {
 
 #awards-recognition {
   position: relative;
-  background: linear-gradient(rgba(10, 9, 8, 0.88), rgba(10, 9, 8, 0.92)), url('../media/thirty-years-bg.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(10, 9, 8, 0.85), rgba(10, 9, 8, 0.90)), url('../media/press-release-bg.jpg') center/cover no-repeat;
 }
 
 .awards-grid {
