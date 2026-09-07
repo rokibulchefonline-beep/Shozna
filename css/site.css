@@ -59,7 +59,7 @@ a:hover > .media::after,
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--c-hairline);
-  padding: 0.75rem var(--gutter);
+  padding: 0.5rem var(--gutter);
 }
 
 .brand {
@@ -71,7 +71,7 @@ a:hover > .media::after,
 
 .brand img {
   width: auto;
-  height: clamp(4.2rem, 6.5vw, 5.8rem);
+  height: clamp(4.4rem, 6.5vw, 6rem);
   max-width: 250px;
   object-fit: contain;
   transition: height var(--dur) var(--ease-out), max-width var(--dur) var(--ease-out);
@@ -79,8 +79,25 @@ a:hover > .media::after,
 }
 
 .site-header.is-stuck .brand img {
-  height: clamp(2.5rem, 3.8vw, 3.2rem);
-  max-width: 155px;
+  height: clamp(3.8rem, 5.5vw, 4.85rem);
+  max-width: 225px;
+}
+
+.site-header.is-stuck .nav {
+  gap: clamp(var(--s-2), 1.6vw, var(--s-4));
+}
+
+.site-header.is-stuck .nav a,
+.site-header.is-stuck .nav-drop__toggle {
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  padding-block: 0.2rem;
+}
+
+.site-header.is-stuck .btn--book-table {
+  font-size: 0.74rem;
+  padding: 0.62rem 1.2rem;
+  letter-spacing: 0.12em;
 }
 
 .nav {
@@ -88,6 +105,7 @@ a:hover > .media::after,
   align-items: center;
   gap: clamp(var(--s-3), 2.2vw, var(--s-5));
   margin-inline: auto 0;
+  transition: gap var(--dur) var(--ease-out);
 }
 
 .nav a,
@@ -100,7 +118,10 @@ a:hover > .media::after,
   color: #ffffff;
   padding-block: var(--s-1);
   position: relative;
-  transition: color var(--dur-fast) var(--ease-out);
+  transition: color var(--dur-fast) var(--ease-out),
+              font-size var(--dur) var(--ease-out),
+              letter-spacing var(--dur) var(--ease-out),
+              padding var(--dur) var(--ease-out);
   white-space: nowrap;
   background: none;
   border: none;
@@ -173,7 +194,10 @@ body[data-page="home"] .nav__home-link {
   cursor: pointer;
   transition: background var(--dur-fast) var(--ease-out),
               transform var(--dur-fast) var(--ease-out),
-              box-shadow var(--dur-fast) var(--ease-out);
+              box-shadow var(--dur-fast) var(--ease-out),
+              padding var(--dur) var(--ease-out),
+              font-size var(--dur) var(--ease-out),
+              letter-spacing var(--dur) var(--ease-out);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
@@ -577,6 +601,11 @@ body[data-page="home"] .nav__home-link {
 
   .nav[data-open="true"] { transform: translateX(0); }
   .nav a { font-size: var(--t-body); }
+  .site-header.is-stuck .nav a,
+  .site-header.is-stuck .nav-drop__toggle {
+    font-size: var(--t-body);
+    padding-block: var(--s-1);
+  }
   .header-actions > .header-call-drop { display: none; }
   .nav-toggle { display: inline-flex; }
 
