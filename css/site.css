@@ -151,7 +151,8 @@ a:hover > .media::after,
 .nav-drop__toggle:hover,
 .nav-drop:hover .nav-drop__toggle,
 .nav a.is-active,
-.nav-drop.is-active .nav-drop__toggle {
+.nav-drop.is-active .nav-drop__toggle,
+.nav-drop__toggle.is-active {
   color: var(--c-brass);
 }
 
@@ -164,7 +165,8 @@ body[data-page="home"] .nav__home-link {
 .nav-drop__toggle:hover::after,
 .nav-drop:hover .nav-drop__toggle::after,
 .nav a.is-active::after,
-.nav-drop.is-active .nav-drop__toggle::after {
+.nav-drop.is-active .nav-drop__toggle::after,
+.nav-drop__toggle.is-active::after {
   width: 100%;
 }
 

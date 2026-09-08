@@ -161,35 +161,54 @@
       <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
     </svg>
   </button>
-  <div class="info-bar__brand">
-    <img src="media/logo.webp" alt="Shozna" width="160" height="89">
-  </div>
-  <div class="info-bar__content">
-    <h3 class="info-bar__heading">VISIT US</h3>
-    <p class="info-bar__address">
-      153 Maidstone Road, Rochester<br>
-      Kent ME1 1RR
-    </p>
 
-    <h3 class="info-bar__heading">OPENING HOURS</h3>
-    <p class="info-bar__hours">
-      <strong>Lunch:</strong> 12:00 PM &ndash; 1:30 PM<br>
-      <span class="info-bar__note">(Takeaway collection &amp; party bookings only)</span><br><br>
-      <strong>Sunday &ndash; Thursday:</strong> 5:00 PM &ndash; 11:00 PM<br>
-      <strong>Friday &amp; Saturday:</strong> 5:00 PM &ndash; Midnight
-    </p>
+  <div class="drawer-inner">
+    <div class="drawer-brand">
+      <img class="drawer-logo" src="media/logo.webp" alt="Shozna Indian &amp; Bangladeshi Cuisine" width="220" height="122">
+    </div>
 
-    <h3 class="info-bar__heading">RESERVATIONS &amp; ENQUIRIES</h3>
-    <p class="info-bar__contact">
-      <a class="numeric" href="tel:+441634847847">01634 847 847</a><br>
-      <a class="numeric" href="tel:+441634849849">01634 849 849</a><br>
-      <a href="mailto:admin@shozna.com">admin@shozna.com</a>
-    </p>
-  </div>
-  <div class="info-bar__actions">
-    <a class="btn btn--solid" href="https://backoffice.chefonline.co.uk/draft/shozna/reservations">BOOK A TABLE ONLINE</a>
+    <!-- Mobile Navigation links for responsive mobile view -->
+    <nav class="drawer-mobile-nav" aria-label="Mobile Navigation">
+      <a href="index.html" class="drawer-mobile-link">Home</a>
+      <a href="about-us.html" class="drawer-mobile-link is-active">About Us</a>
+      <a href="restaurant-menu.html" class="drawer-mobile-link">Restaurant Menu</a>
+      <a href="takeaway-menu.html" class="drawer-mobile-link">Takeaway Menu</a>
+      <a href="https://www.srsdraft.co.uk/shozna-2026/private-dining" class="drawer-mobile-link">Private Dining</a>
+      <a href="https://www.srsdraft.co.uk/shozna-2026/blog" class="drawer-mobile-link">Blog</a>
+      <a href="https://www.srsdraft.co.uk/shozna-2026/contact" class="drawer-mobile-link">Contact</a>
+    </nav>
+
+    <div class="drawer-circle-wrap">
+      <img src="https://www.srsdraft.co.uk/shozna-2026/assets/images/resource/gallery-1.jpg" alt="Shozna Dining" width="160" height="160" class="drawer-circle-img">
+    </div>
+
+    <h3 class="drawer-title">VISIT US</h3>
+
+    <div class="drawer-info-group">
+      <p class="drawer-address">
+        153 Maidstone Road, Rochester<br>
+        ME1 1RR
+      </p>
+      <p class="drawer-hours">Open : Thursday: 11:00 AM &ndash; 11:30 PM</p>
+      <p class="drawer-email-wrap">
+        <a class="drawer-email" href="mailto:admin@shozna.com">admin@shozna.com</a>
+      </p>
+    </div>
+
+    <div class="drawer-diamond" aria-hidden="true">&#9671;</div>
+
+    <div class="drawer-phone-wrap">
+      <a class="drawer-phone-link" href="tel:+441634847847">
+        <svg class="drawer-phone-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1C10.61 22 2 13.39 2 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+        </svg>
+        <span class="numeric">01634 847 847, 01634 849 849</span>
+      </a>
+    </div>
   </div>
 </aside>
+
+<div class="backdrop" id="backdrop" hidden></div>
 
 <main id="main">
 
