@@ -4068,48 +4068,6 @@ a.award-desc:hover .award-link-icon {
   margin-bottom: 2rem;
 }
 
-.inner-banner__actions .btn {
-  padding: 0.95rem 2.15rem;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  border-radius: 2px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  transition: background var(--dur-fast) var(--ease-out),
-              color var(--dur-fast) var(--ease-out),
-              border-color var(--dur-fast) var(--ease-out),
-              box-shadow var(--dur-fast) var(--ease-out);
-}
-
-.inner-banner__actions .btn--solid.btn--gold {
-  background: var(--c-gold, #dfbf86);
-  color: #100e0c !important;
-  border: 1px solid var(--c-gold, #dfbf86);
-}
-
-.inner-banner__actions .btn--solid.btn--gold:hover {
-  background: #ecd5a7;
-  border-color: #ecd5a7;
-  color: #000000 !important;
-  box-shadow: 0 6px 20px rgba(223, 191, 134, 0.25);
-}
-
-.inner-banner__actions .btn--outline {
-  background: rgba(14, 13, 11, 0.4);
-  border: 1px solid rgba(223, 191, 134, 0.45);
-  color: #ffffff !important;
-}
-
-.inner-banner__actions .btn--outline:hover {
-  background: rgba(223, 191, 134, 0.15);
-  border-color: var(--c-gold, #dfbf86);
-  color: var(--c-gold, #dfbf86) !important;
-}
-
 /* --- Hero Bottom Breadcrumbs ---------------------------------------------- */
 .breadcrumb--hero-bottom {
   margin-top: 0.25rem;
@@ -4367,20 +4325,6 @@ a.award-desc:hover .award-link-icon {
    Takeaway Menu Page Styles (`/takeaway-menu`)
    ========================================================================== */
 
-/* --- Button Outlines and Variants ------------------------------------------ */
-.btn--outline {
-  background: transparent;
-  color: #ffffff !important;
-  border: 1px solid rgba(228, 197, 144, 0.45);
-  text-decoration: none !important;
-}
-
-.btn--outline:hover {
-  background: rgba(228, 197, 144, 0.12);
-  border-color: var(--c-brass, #c5a880);
-  color: var(--c-brass, #c5a880) !important;
-}
-
 /* --- Dual Actions Row for Menu Cards --------------------------------------- */
 .menu-lib-card__actions {
   display: flex;
@@ -4388,24 +4332,6 @@ a.award-desc:hover .award-link-icon {
   gap: 0.75rem;
   flex-wrap: wrap;
   margin-top: auto;
-}
-
-.menu-lib-card__actions .btn {
-  text-decoration: none !important;
-}
-
-.menu-lib-card__btn--gold {
-  background: var(--c-gold, #c5a880);
-  color: #0b0a09 !important;
-  border-color: var(--c-gold, #c5a880);
-  font-weight: 700;
-  text-decoration: none !important;
-}
-
-.menu-lib-card__btn--gold:hover {
-  background: #d4b993;
-  border-color: #d4b993;
-  color: #000000 !important;
 }
 
 /* --- Section: How to Order Takeaway from Shozna (5 Steps) ------------------ */

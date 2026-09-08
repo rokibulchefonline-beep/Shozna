@@ -117,38 +117,48 @@ button, input, select, textarea { font: inherit; color: inherit; }
   align-items: center;
   justify-content: center;
   gap: var(--s-1);
-  padding: 0.9em 2em;
-  font-family: var(--font-text);
-  font-size: var(--t-eyebrow);
+  padding: 0.85rem 1.85rem;
+  font-family: var(--font-family, "Raleway", sans-serif);
+  font-size: var(--t-eyebrow, 0.8125rem);
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
   border: 1px solid var(--c-brass);
   cursor: pointer;
-  transition: background var(--dur) var(--ease-out),
-              color var(--dur) var(--ease-out),
-              border-color var(--dur) var(--ease-out);
+  transition: background var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out);
 }
 
-.btn--solid {
-  background: var(--c-brass);
-  color: var(--c-ink);
+.btn--solid,
+.btn--gold,
+.menu-lib-card__btn--gold {
+  background: var(--c-brass, #c5a880) !important;
+  color: var(--c-ink, #0a0908) !important;
+  border: 1px solid var(--c-brass, #c5a880) !important;
 }
 
-.btn--solid:hover {
-  background: var(--c-brass-bright);
-  border-color: var(--c-brass-bright);
+.btn--solid:hover,
+.btn--gold:hover,
+.menu-lib-card__btn--gold:hover {
+  background: var(--c-brass-bright, #dcc4a2) !important;
+  border-color: var(--c-brass-bright, #dcc4a2) !important;
+  color: var(--c-ink, #0a0908) !important;
 }
 
-.btn--ghost {
-  background: transparent;
-  color: var(--c-brass);
+.btn--ghost,
+.btn--outline {
+  background: transparent !important;
+  color: var(--c-brass, #c5a880) !important;
+  border: 1px solid var(--c-brass, #c5a880) !important;
 }
 
-.btn--ghost:hover {
-  background: var(--c-brass);
-  color: var(--c-ink);
+.btn--ghost:hover,
+.btn--outline:hover {
+  background: var(--c-brass, #c5a880) !important;
+  color: var(--c-ink, #0a0908) !important;
+  border-color: var(--c-brass, #c5a880) !important;
 }
 
 .btn-row {
