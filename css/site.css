@@ -3999,17 +3999,21 @@ a.award-desc:hover .award-link-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1080px;
+  width: 100%;
 }
 
 .inner-banner--menu .inner-banner__title {
   font-family: var(--font-primary, "Raleway", sans-serif);
-  font-size: clamp(2.2rem, 5.2vw, 3.85rem);
+  font-size: clamp(1.4rem, 4.2vw, 3.75rem);
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #ffffff;
   line-height: 1.15;
   margin: 0.45rem 0 0.85rem;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .hero-title-italic-gold {
@@ -4018,7 +4022,22 @@ a.award-desc:hover .award-link-icon {
   font-weight: 800;
   color: var(--c-gold, #dfbf86);
   letter-spacing: 0.04em;
-  margin-left: 0.2rem;
+  margin-left: 0.25rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .inner-banner--menu .inner-banner__title {
+    font-size: clamp(1.2rem, 5.2vw, 1.85rem);
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (max-width: 380px) {
+  .inner-banner--menu .inner-banner__title {
+    font-size: clamp(1.05rem, 5vw, 1.25rem);
+    letter-spacing: 0.01em;
+  }
 }
 
 .inner-banner__desc {
