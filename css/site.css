@@ -3987,4 +3987,254 @@ a.award-desc:hover .award-link-icon {
   }
 }
 
+/* ==========================================================================
+   Restaurant Menu Page Styles (`/restaurant-menu`)
+   ========================================================================== */
+
+/* --- Centered Hero Additions ----------------------------------------------- */
+
+.inner-banner__content--center {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner-banner__desc {
+  font-size: clamp(1rem, 1.1vw, 1.15rem);
+  line-height: 1.75;
+  color: #cfc7bc;
+  max-width: 680px;
+  margin: 0 auto 1.75rem;
+}
+
+.inner-banner__actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+/* --- Section 2: Menu Library Cards Grid ----------------------------------- */
+
+.menu-library-section {
+  padding-block: clamp(4.5rem, 8vw, 6.5rem);
+}
+
+.menu-library-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.5rem, 2.5vw, 2.5rem);
+  margin-top: clamp(2.5rem, 4vw, 3.75rem);
+}
+
+.menu-lib-card {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  background: rgba(20, 19, 17, 0.75);
+  border: 1px solid rgba(228, 197, 144, 0.22);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  transition: border-color var(--dur) var(--ease-out),
+              transform var(--dur) var(--ease-out),
+              background var(--dur) var(--ease-out),
+              box-shadow var(--dur) var(--ease-out);
+}
+
+.menu-lib-card:hover {
+  border-color: rgba(228, 197, 144, 0.55);
+  transform: translateY(-4px);
+  background: rgba(26, 24, 21, 0.95);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.7);
+}
+
+.menu-lib-card__media {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  min-height: 240px;
+  background: #11100e;
+}
+
+.menu-lib-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.menu-lib-card:hover .menu-lib-card__img {
+  transform: scale(1.06);
+}
+
+.menu-lib-card__content {
+  padding: clamp(1.5rem, 2vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-lib-card__kicker {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #e4c590;
+  margin-bottom: 0.4rem;
+}
+
+.menu-lib-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 1.8vw, 1.65rem);
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  margin-bottom: 0.65rem;
+}
+
+.menu-lib-card__desc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #a39c90;
+  margin-bottom: 1rem;
+}
+
+.menu-lib-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.menu-lib-card__list li {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: #cfc7bc;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.menu-lib-card__list li::before {
+  content: "•";
+  color: #e4c590;
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.menu-lib-card__btn {
+  align-self: flex-start;
+  margin-top: auto;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.65rem 1.25rem;
+}
+
+@media (max-width: 991px) {
+  .menu-library-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 580px) {
+  .menu-lib-card {
+    grid-template-columns: 1fr;
+  }
+  .menu-lib-card__media {
+    height: 220px;
+    min-height: auto;
+  }
+}
+
+/* --- Section 5: Looking to Order for Collection CTA ------------------------ */
+
+.menu-collection-section {
+  position: relative;
+  padding-block: clamp(5.5rem, 9vw, 7.5rem);
+  padding-inline: 1.5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.menu-collection-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.32);
+  transform: scale(1.02);
+  z-index: 0;
+}
+
+.menu-collection-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(14, 13, 11, 0.7) 0%, rgba(10, 9, 8, 0.94) 100%);
+  z-index: 1;
+}
+
+.menu-collection-card {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  margin: 0 auto;
+  background: rgba(18, 17, 15, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(228, 197, 144, 0.32);
+  border-radius: 8px;
+  padding: clamp(2.5rem, 4vw, 3.75rem) clamp(1.75rem, 3.5vw, 3.25rem);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+.menu-collection-card__notch {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #e4c590, transparent);
+}
+
+.menu-collection-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  line-height: 1.25;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.menu-collection-card__text {
+  font-size: clamp(0.95rem, 1vw, 1.05rem);
+  line-height: 1.85;
+  color: #cfc7bc;
+  margin-bottom: 1.75rem;
+}
+
+.menu-collection-card__actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+
 
