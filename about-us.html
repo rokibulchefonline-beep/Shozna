@@ -359,16 +359,10 @@
 
     <div class="about-services-wrap">
 
-      <!-- Central Plated Dish -->
-      <div class="about-services-center" data-reveal>
-        <img src="media/about-service-dish.png" alt="Shozna Sizzling Tandoori Presentation" class="about-services-center__img" loading="lazy" width="460" height="460">
-      </div>
-
-      <!-- 4 Compass Service Offerings -->
-      <div class="about-services-grid">
-
+      <!-- Left Column: 2 Cards -->
+      <div class="about-services-col about-services-col--left">
         <!-- 1. Takeaway Collection -->
-        <div class="about-service-card about-service-card--tl" data-reveal>
+        <div class="about-service-card about-service-card--left" data-reveal>
           <div class="about-service-card__icon-wrap">
             <img src="media/s-icon-takeaway.png" alt="" class="about-service-card__icon" width="44" height="44" aria-hidden="true">
           </div>
@@ -383,8 +377,34 @@
           </div>
         </div>
 
+        <!-- 3. Private Celebrations -->
+        <div class="about-service-card about-service-card--left" data-reveal>
+          <div class="about-service-card__icon-wrap">
+            <img src="media/s-icon-celebration.png" alt="" class="about-service-card__icon" width="44" height="44" aria-hidden="true">
+          </div>
+          <div class="about-service-card__body">
+            <h3 class="about-service-card__title">Private Celebrations</h3>
+            <p class="about-service-card__text">
+              Celebrate weddings, birthdays and special occasions with bespoke menus and attentive service.
+            </p>
+            <a href="https://www.srsdraft.co.uk/shozna-2026/private-dining" class="about-service-card__link">
+              <span>DISCOVER MORE</span> &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center Column: Plated Dish -->
+      <div class="about-services-col about-services-col--center" data-reveal>
+        <div class="about-services-dish-frame">
+          <img src="media/about-service-dish.png" alt="Shozna Sizzling Tandoori Presentation" class="about-services-dish__img" loading="lazy" width="460" height="460">
+        </div>
+      </div>
+
+      <!-- Right Column: 2 Cards -->
+      <div class="about-services-col about-services-col--right">
         <!-- 2. Fine Dining -->
-        <div class="about-service-card about-service-card--tr" data-reveal>
+        <div class="about-service-card about-service-card--right" data-reveal>
           <div class="about-service-card__icon-wrap">
             <img src="media/s-icon-dining.png" alt="" class="about-service-card__icon" width="44" height="44" aria-hidden="true">
           </div>
@@ -399,24 +419,8 @@
           </div>
         </div>
 
-        <!-- 3. Private Celebrations -->
-        <div class="about-service-card about-service-card--bl" data-reveal>
-          <div class="about-service-card__icon-wrap">
-            <img src="media/s-icon-celebration.png" alt="" class="about-service-card__icon" width="44" height="44" aria-hidden="true">
-          </div>
-          <div class="about-service-card__body">
-            <h3 class="about-service-card__title">Private Celebrations</h3>
-            <p class="about-service-card__text">
-              Celebrate weddings, birthdays and special occasions with bespoke menus and attentive service.
-            </p>
-            <a href="https://www.srsdraft.co.uk/shozna-2026/private-dining" class="about-service-card__link">
-              <span>DISCOVER MORE</span> &rarr;
-            </a>
-          </div>
-        </div>
-
         <!-- 4. The Shozna Dining Room -->
-        <div class="about-service-card about-service-card--br" data-reveal>
+        <div class="about-service-card about-service-card--right" data-reveal>
           <div class="about-service-card__icon-wrap">
             <img src="media/s-icon-room.png" alt="" class="about-service-card__icon" width="44" height="44" aria-hidden="true">
           </div>
@@ -430,7 +434,6 @@
             </a>
           </div>
         </div>
-
       </div>
 
     </div>
@@ -439,20 +442,13 @@
 </section>
 
 <!-- ======================================================================
-     SECTION 4: CULINARY TRADITIONS (Alternating Split 1)
+     SECTION 4: CULINARY TRADITIONS (Image on Right Column)
      ====================================================================== -->
 <section class="section about-heritage-section" id="heritage">
   <div class="shell">
-    <div class="about-story-split">
+    <div class="about-story-split about-story-split--image-right">
 
-      <!-- Media Left -->
-      <div class="about-story-split__media" data-reveal>
-        <div class="about-story-frame">
-          <img src="media/about-curry-bowl.jpg" alt="Shozna Authentic Subcontinental Curry Dish" class="about-story-frame__img" loading="lazy" width="620" height="620">
-        </div>
-      </div>
-
-      <!-- Narrative Right -->
+      <!-- Narrative Left -->
       <div class="about-story-split__content" data-reveal>
         <p class="eyebrow eyebrow--dining">A TASTE OF THE SUBCONTINENT</p>
         <h2 class="about-story-split__title">
@@ -477,73 +473,186 @@
         </p>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- ======================================================================
-     SECTION 5: HISTORIC ROCHESTER SETTING (Alternating Split 2)
-     ====================================================================== -->
-<section class="section about-rochester-section" id="rochester">
-  <div class="shell">
-    <div class="about-story-split about-story-split--reverse">
-
-      <!-- Media Right (Reversed) -->
+      <!-- Media Right -->
       <div class="about-story-split__media" data-reveal>
         <div class="about-story-frame">
-          <img src="media/gallery-1.jpg" alt="Shozna Rochester Historic Interior Setting" class="about-story-frame__img" loading="lazy" width="620" height="520">
+          <img src="media/about-curry-bowl.jpg" alt="Shozna Authentic Subcontinental Curry Dish" class="about-story-frame__img" loading="lazy" width="620" height="620">
         </div>
       </div>
 
-      <!-- Narrative Left -->
-      <div class="about-story-split__content" data-reveal>
-        <p class="eyebrow eyebrow--dining">HERITAGE MEETS ELEGANCE</p>
-        <h2 class="about-story-split__title">
-          A Distinguished Setting in <span class="gold-script">Historic Rochester</span>
-        </h2>
-        <img class="section-separator section-separator--left" src="media/separator.svg" alt="" width="110" height="16">
-
-        <p class="about-lead">
-          Shozna occupies a characterful building that was once the King&rsquo;s Arms. Its historic surroundings provide a fitting home for a restaurant built upon culture and tradition.
-        </p>
-        <p class="about-text">
-          Inside, sparkling chandeliers, Indian antiques and carved wooden mirrors create a sense of quiet grandeur. Modern furnishings and atmospheric lighting introduce a contemporary finish.
-        </p>
-        <p class="about-text">
-          The setting feels elegant without losing its warmth. It creates a welcoming atmosphere for intimate dinners, family gatherings and life&rsquo;s most meaningful celebrations.
-        </p>
-      </div>
-
     </div>
   </div>
 </section>
 
 <!-- ======================================================================
-     SECTION 6: STORY GALLERY MOMENTS
+     THE SHOZNA EXPERIENCE - CULINARY CAROUSEL
      ====================================================================== -->
-<section class="section about-gallery-section" id="gallery">
+<section class="section food-gallery-section about-experience-section" id="gallery">
   <div class="shell">
 
-    <div class="section-head section-head--centered" data-reveal>
-      <p class="eyebrow eyebrow--dining">THE SHOZNA EXPERIENCE</p>
-      <h2 class="about-section-title">
-        Food, Heritage and <span class="gold-script">Memorable Moments</span>
-      </h2>
-      <img class="section-separator" src="media/separator.svg" alt="" width="120" height="18">
+    <div class="food-gallery-head" data-reveal>
+      <div class="food-gallery-head__text">
+        <p class="eyebrow eyebrow--dining">THE SHOZNA EXPERIENCE</p>
+        <h2 class="food-gallery-title">Food, Heritage and <span class="gold-script">Memorable Moments</span></h2>
+        <p class="lead food-gallery-lead">
+          Explore the vibrant colours, rich aromas, and authentic presentation of Shozna's award-winning Indian and Bangladeshi cooking.
+        </p>
+      </div>
+
+      <div class="food-gallery-head__controls">
+        <button class="food-gallery-nav-btn" data-food-gallery-prev type="button" aria-label="Previous dishes">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="food-gallery-nav-btn" data-food-gallery-next type="button" aria-label="Next dishes">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <div class="about-gallery-grid" data-reveal>
-      <div class="about-gallery-item">
-        <img src="media/first-floor.jpg" alt="Shozna Private Dining Upstairs" class="about-gallery-item__img" loading="lazy" width="400" height="300">
+    <div class="carousel food-gallery-carousel" data-food-gallery>
+      <div class="food-carousel__track food-gallery-track" data-food-gallery-track tabindex="0" role="region" aria-label="Shozna food gallery">
+
+        <!-- Set 1 (Slides 1-8) -->
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-1.jpg" alt="Shozna culinary dish 1" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-2.jpg" alt="Shozna culinary dish 2" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-3.jpg" alt="Shozna culinary dish 3" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-4.jpg" alt="Shozna culinary dish 4" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-5.jpg" alt="Shozna culinary dish 5" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-6.jpg" alt="Shozna culinary dish 6" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-7.jpg" alt="Shozna culinary dish 7" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-8.jpg" alt="Shozna culinary dish 8" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+
+        <!-- Set 2 (Slides 9-16) - Active center starting group -->
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-1.jpg" alt="Shozna culinary dish 1" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-2.jpg" alt="Shozna culinary dish 2" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-3.jpg" alt="Shozna culinary dish 3" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-4.jpg" alt="Shozna culinary dish 4" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-5.jpg" alt="Shozna culinary dish 5" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-6.jpg" alt="Shozna culinary dish 6" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-7.jpg" alt="Shozna culinary dish 7" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-8.jpg" alt="Shozna culinary dish 8" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+
+        <!-- Set 3 (Slides 17-24) - Forward buffer -->
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-1.jpg" alt="Shozna culinary dish 1" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-2.jpg" alt="Shozna culinary dish 2" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-3.jpg" alt="Shozna culinary dish 3" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-4.jpg" alt="Shozna culinary dish 4" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-5.jpg" alt="Shozna culinary dish 5" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-6.jpg" alt="Shozna culinary dish 6" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-7.jpg" alt="Shozna culinary dish 7" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+        <article class="food-slide">
+          <div class="food-slide__image-wrap">
+            <img src="media/food-8.jpg" alt="Shozna culinary dish 8" class="food-slide__img" loading="lazy">
+          </div>
+        </article>
+
       </div>
-      <div class="about-gallery-item">
-        <img src="media/dish-gallery-2.jpg" alt="Shozna Signature Curries and Naan" class="about-gallery-item__img" loading="lazy" width="400" height="300">
+    </div>
+
+    <div class="food-gallery-footer" data-reveal>
+      <div class="food-gallery-footer__badge">
+        <span class="food-gallery-footer__dot"></span>
+        <span>EXPLORE OUR COMPLETE DISHES &amp; DINING ROOMS</span>
       </div>
-      <div class="about-gallery-item">
-        <img src="media/ground-floor.jpg" alt="Shozna Ground Floor Restaurant" class="about-gallery-item__img" loading="lazy" width="400" height="300">
-      </div>
-      <div class="about-gallery-item">
-        <img src="media/dish-gallery-3.jpg" alt="Chef Plating Fine Indian Dishes" class="about-gallery-item__img" loading="lazy" width="400" height="300">
+      <div class="food-gallery-footer__actions">
+        <a class="btn btn--solid" href="https://www.srsdraft.co.uk/shozna-2026/gallery">View Gallery &rarr;</a>
+        <a class="btn btn--ghost" href="https://backoffice.chefonline.co.uk/draft/shozna/reservations">Book a Table</a>
       </div>
     </div>
 

@@ -3638,6 +3638,8 @@ a.award-desc:hover .award-link-icon {
 
 /* --- Section 3: Services Compass ------------------------------------------- */
 
+/* --- Section 3: Services Compass (3-Column Symmetrical Layout) ------------- */
+
 .about-services-section {
   padding-block: clamp(4.5rem, 8vw, 6.5rem);
   background: #0f0e0d url('../media/pattern-4.png') repeat;
@@ -3645,21 +3647,46 @@ a.award-desc:hover .award-link-icon {
 }
 
 .about-services-wrap {
-  position: relative;
-  margin-top: clamp(3rem, 5vw, 4.5rem);
-}
-
-.about-services-center {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 350px) 1fr;
+  gap: clamp(1.5rem, 2.5vw, 2.5rem);
   align-items: center;
+  margin-top: clamp(2.5rem, 4vw, 3.75rem);
 }
 
-.about-services-center__img {
-  max-width: min(340px, 80vw);
+.about-services-col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 2vw, 2.25rem);
+}
+
+.about-services-col--left {
+  text-align: right;
+}
+
+.about-services-col--left .about-service-card__icon-wrap {
+  margin-left: auto;
+}
+
+.about-services-col--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-services-dish-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.about-services-dish__img {
+  width: 100%;
+  max-width: 350px;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.85));
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.9));
   animation: floatDish 6s ease-in-out infinite alternate;
 }
 
@@ -3668,10 +3695,8 @@ a.award-desc:hover .award-link-icon {
   100% { transform: translateY(-8px); }
 }
 
-.about-services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(1.5rem, 2.5vw, 2.5rem);
+.about-services-col--right {
+  text-align: left;
 }
 
 .about-service-card {
@@ -3750,74 +3775,10 @@ a.award-desc:hover .award-link-icon {
   gap: 0.75rem;
 }
 
-/* On large screens, compass radial layout around center dish */
-@media (min-width: 1060px) {
-  .about-services-wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 24rem;
-    row-gap: 2.5rem;
-    align-items: center;
-  }
-  .about-services-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    margin: 0;
-  }
-  .about-services-center__img {
-    max-width: 330px;
-  }
-  .about-services-grid {
-    display: contents;
-  }
-  .about-service-card--tl {
-    grid-column: 1;
-    grid-row: 1;
-    text-align: right;
-  }
-  .about-service-card--tl .about-service-card__icon-wrap {
-    margin-left: auto;
-  }
-  .about-service-card--tr {
-    grid-column: 2;
-    grid-row: 1;
-    text-align: left;
-  }
-  .about-service-card--bl {
-    grid-column: 1;
-    grid-row: 2;
-    text-align: right;
-  }
-  .about-service-card--bl .about-service-card__icon-wrap {
-    margin-left: auto;
-  }
-  .about-service-card--br {
-    grid-column: 2;
-    grid-row: 2;
-    text-align: left;
-  }
-}
-
-@media (max-width: 1059px) {
-  .about-services-center {
-    margin-bottom: 2.5rem;
-  }
-}
-
-/* --- Sections 4 & 5: Alternating Heritage & Rochester Splits --------------- */
+/* --- Section 4: A Taste of the Subcontinent (Image on Right) --------------- */
 
 .about-heritage-section {
   padding-block: clamp(4.5rem, 8vw, 6.5rem);
-}
-
-.about-rochester-section {
-  padding-block: clamp(4.5rem, 8vw, 6.5rem);
-  background: #0d0c0b;
-  border-top: 1px solid rgba(228, 197, 144, 0.12);
-  border-bottom: 1px solid rgba(228, 197, 144, 0.12);
 }
 
 .about-story-split {
@@ -3827,7 +3788,7 @@ a.award-desc:hover .award-link-icon {
   align-items: center;
 }
 
-.about-story-split--reverse {
+.about-story-split--image-right {
   grid-template-columns: 1.15fr 1fr;
 }
 
@@ -3874,39 +3835,12 @@ a.award-desc:hover .award-link-icon {
   margin-top: 1.25rem;
 }
 
-/* --- Section 6: Story Moments Gallery -------------------------------------- */
+/* --- The Shozna Experience Carousel Section -------------------------------- */
 
-.about-gallery-section {
+.about-experience-section {
   padding-block: clamp(4.5rem, 8vw, 6.5rem);
-}
-
-.about-gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(1rem, 1.5vw, 1.5rem);
-  margin-top: clamp(2.5rem, 4vw, 3.5rem);
-}
-
-.about-gallery-item {
-  position: relative;
-  border-radius: 6px;
-  overflow: hidden;
-  border: 1px solid rgba(228, 197, 144, 0.22);
-  aspect-ratio: 4 / 3;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
-  background: #12110f;
-}
-
-.about-gallery-item__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.6s var(--ease-out);
-}
-
-.about-gallery-item:hover .about-gallery-item__img {
-  transform: scale(1.08);
+  border-top: 1px solid rgba(228, 197, 144, 0.12);
+  border-bottom: 1px solid rgba(228, 197, 144, 0.12);
 }
 
 /* --- Section 7: Closing 30-Year Story & CTAs ------------------------------- */
@@ -4017,28 +3951,30 @@ a.award-desc:hover .award-link-icon {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  .about-story-split {
+  .about-services-wrap {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
   }
-  .about-story-split--reverse {
-    grid-template-columns: 1fr;
-  }
-  .about-story-split--reverse .about-story-split__media {
+  .about-services-col--center {
     order: -1;
   }
-  .about-gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .about-services-dish__img {
+    max-width: 280px;
+  }
+  .about-services-col--left {
+    text-align: left;
+  }
+  .about-services-col--left .about-service-card__icon-wrap {
+    margin-left: 0;
+  }
+  .about-story-split,
+  .about-story-split--image-right {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }
 
 @media (max-width: 640px) {
-  .about-services-grid {
-    grid-template-columns: 1fr;
-  }
-  .about-gallery-grid {
-    grid-template-columns: 1fr;
-  }
   .about-closing-card__actions {
     flex-direction: column;
     width: 100%;
