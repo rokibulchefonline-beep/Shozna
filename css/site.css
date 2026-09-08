@@ -4240,6 +4240,20 @@ a.award-desc:hover .award-link-icon {
    Takeaway Menu Page Styles (`/takeaway-menu`)
    ========================================================================== */
 
+/* --- Button Outlines and Variants ------------------------------------------ */
+.btn--outline {
+  background: transparent;
+  color: #ffffff !important;
+  border: 1px solid rgba(228, 197, 144, 0.45);
+  text-decoration: none !important;
+}
+
+.btn--outline:hover {
+  background: rgba(228, 197, 144, 0.12);
+  border-color: var(--c-brass, #c5a880);
+  color: var(--c-brass, #c5a880) !important;
+}
+
 /* --- Dual Actions Row for Menu Cards --------------------------------------- */
 .menu-lib-card__actions {
   display: flex;
@@ -4249,17 +4263,22 @@ a.award-desc:hover .award-link-icon {
   margin-top: auto;
 }
 
+.menu-lib-card__actions .btn {
+  text-decoration: none !important;
+}
+
 .menu-lib-card__btn--gold {
   background: var(--c-gold, #c5a880);
-  color: #0b0a09;
+  color: #0b0a09 !important;
   border-color: var(--c-gold, #c5a880);
   font-weight: 700;
+  text-decoration: none !important;
 }
 
 .menu-lib-card__btn--gold:hover {
   background: #d4b993;
   border-color: #d4b993;
-  color: #000000;
+  color: #000000 !important;
 }
 
 /* --- Section: How to Order Takeaway from Shozna (5 Steps) ------------------ */
