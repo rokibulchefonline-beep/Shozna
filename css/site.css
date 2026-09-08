@@ -531,42 +531,55 @@ body[data-page="home"] .nav__home-link {
 .nav-drop__toggle[aria-expanded="true"]::after { width: 100%; }
 
 .nav-drop__toggle svg { transition: transform var(--dur) var(--ease-out); }
+.nav-drop:hover .nav-drop__toggle svg,
+.nav-drop:focus-within .nav-drop__toggle svg,
 .nav-drop__toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
 
 .nav-drop__list {
   position: absolute;
-  top: calc(100% + var(--s-2));
+  top: 100%;
   left: 50%;
   translate: -50% 0;
-  min-width: 13rem;
+  min-width: max-content;
+  white-space: nowrap;
   margin: 0;
-  padding: var(--s-1) 0;
+  padding: 0.5rem 0;
   list-style: none;
-  background: var(--c-ink-sunken);
-  border: 1px solid var(--c-hairline);
+  background: var(--c-ink-sunken, #0c0a08);
+  border: 1px solid rgba(228, 197, 144, 0.25);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.75);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-6px);
+  pointer-events: none;
+  transform: translateY(-4px);
   transition: opacity var(--dur) var(--ease-out),
               transform var(--dur) var(--ease-out),
               visibility var(--dur);
-  z-index: 10;
+  z-index: 100;
 }
 
+.nav-drop:hover > .nav-drop__list,
+.nav-drop:focus-within > .nav-drop__list,
 .nav-drop__toggle[aria-expanded="true"] + .nav-drop__list {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
   transform: none;
 }
 
 .nav-drop__list a {
   display: block;
-  padding: 0.6rem var(--s-2);
+  padding: 0.65rem 1.4rem;
   letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
 }
 
 .nav-drop__list a::after { content: none; }
-.nav-drop__list a:hover { color: var(--c-brass); background: rgba(197,168,128,0.07); }
+.nav-drop__list a:hover,
+.nav-drop__list a.is-active { color: var(--c-brass); background: rgba(197,168,128,0.1); }
 
 .nav-toggle {
   display: none;
