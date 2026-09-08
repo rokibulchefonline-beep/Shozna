@@ -11,7 +11,8 @@
   var path = window.location.pathname.toLowerCase();
   var isSubpage = path.includes('about-us') ||
                   path.includes('menu') ||
-                  path.includes('private-dining') ||
+                  path.includes('upstairs') ||
+                  path.includes('downstairs') ||
                   path.includes('blog') ||
                   path.includes('contact');
   if (isSubpage) {

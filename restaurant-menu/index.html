@@ -84,6 +84,8 @@
   <nav class="nav" id="nav" aria-label="Primary">
     <a href="../index.html" class="nav__home-link">Home</a>
     <a href="../about-us.html">About Us</a>
+    
+    <!-- Menus Dropdown -->
     <div class="nav-drop">
       <button class="nav-drop__toggle is-active" aria-expanded="false" aria-controls="menuDrop">
         Menus
@@ -96,19 +98,34 @@
         <li><a href="../takeaway-menu.html">Takeaway Menu</a></li>
       </ul>
     </div>
-    <a href="../private-dining.html">Private Dining</a>
+
+    <!-- Dining Spaces Dropdown -->
+    <div class="nav-drop">
+      <button class="nav-drop__toggle" aria-expanded="false" aria-controls="diningDrop">
+        Dining Spaces
+        <svg width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true">
+          <path d="M1 1l3.5 3.5L8 1" stroke="currentColor" stroke-width="1.3"/>
+        </svg>
+      </button>
+      <ul class="nav-drop__list" id="diningDrop">
+        <li><a href="../upstairs.html">Private Dining Room (Upstairs)</a></li>
+        <li><a href="../downstairs.html">Standard Dine-In (Downstairs)</a></li>
+      </ul>
+    </div>
+
     <a href="https://www.srsdraft.co.uk/shozna-2026/blog">Blog</a>
     <a href="https://www.srsdraft.co.uk/shozna-2026/contact">Contact</a>
+    
     <div class="nav__call-group">
       <a class="nav__call-link" href="https://backoffice.chefonline.co.uk/draft/shozna/reservations" style="color: var(--c-brass); font-weight: 700; margin-bottom: 0.5rem; text-decoration: none;">
         <span>Book a Table Online &rarr;</span>
       </a>
       <a class="nav__call-link" href="tel:+441634847847">
-        <span>Call to Book</span>
+        <span>Standard Dining</span>
         <b class="numeric">01634 847 847</b>
       </a>
       <a class="nav__call-link" href="tel:+441634846846">
-        <span>Private Dine In</span>
+        <span>Private Dining Hire</span>
         <b class="numeric">01634 846 846</b>
       </a>
     </div>
@@ -129,11 +146,11 @@
           <span class="header-call-sub">Instant Table Reservation</span>
         </a>
         <a class="header-call-item" href="tel:+441634847847" role="menuitem">
-          <span class="header-call-label">Call to Book</span>
+          <span class="header-call-label">Standard Dine-In</span>
           <span class="header-call-num numeric">01634 847 847</span>
         </a>
         <a class="header-call-item" href="tel:+441634846846" role="menuitem">
-          <span class="header-call-label">Private Dine In</span>
+          <span class="header-call-label">Private Dining Room (Upstairs)</span>
           <span class="header-call-num numeric">01634 846 846</span>
         </a>
       </div>
@@ -171,13 +188,14 @@
       <img class="drawer-logo" src="../media/logo.webp" alt="Shozna Indian &amp; Bangladeshi Cuisine" width="220" height="122">
     </div>
 
-    <!-- Mobile Navigation links for responsive mobile view -->
+    <!-- Mobile Navigation links -->
     <nav class="drawer-mobile-nav" aria-label="Mobile Navigation">
       <a href="../index.html" class="drawer-mobile-link">Home</a>
       <a href="../about-us.html" class="drawer-mobile-link">About Us</a>
-      <a href="../restaurant-menu.html" class="drawer-mobile-link is-active">Restaurant Menu</a>
+      <a href="index.html" class="drawer-mobile-link is-active">Restaurant Menu</a>
       <a href="../takeaway-menu.html" class="drawer-mobile-link">Takeaway Menu</a>
-      <a href="../private-dining.html" class="drawer-mobile-link">Private Dining</a>
+      <a href="../upstairs.html" class="drawer-mobile-link">Private Dining Room (Upstairs)</a>
+      <a href="../downstairs.html" class="drawer-mobile-link">Standard Dine-In (Downstairs)</a>
       <a href="https://www.srsdraft.co.uk/shozna-2026/blog" class="drawer-mobile-link">Blog</a>
       <a href="https://www.srsdraft.co.uk/shozna-2026/contact" class="drawer-mobile-link">Contact</a>
     </nav>
@@ -753,11 +771,12 @@
         <ul class="footer-links-list">
           <li><a href="../index.html">HOME</a></li>
           <li><a href="../about-us.html">ABOUT US</a></li>
-          <li><a href="index.html">RESTAURANT MENU</a></li>
+          <li><a href="../restaurant-menu.html">RESTAURANT MENU</a></li>
           <li><a href="../takeaway-menu.html">TAKEAWAY MENU</a></li>
+          <li><a href="../upstairs.html">UPSTAIRS (PRIVATE DINING)</a></li>
+          <li><a href="../downstairs.html">DOWNSTAIRS (STANDARD DINE-IN)</a></li>
           <li><a href="https://backoffice.chefonline.co.uk/draft/shozna/menu">ORDER ONLINE</a></li>
           <li><a href="https://backoffice.chefonline.co.uk/draft/shozna/reservations">RESERVATION</a></li>
-          <li><a href="https://www.srsdraft.co.uk/shozna-2026/gallery">GALLERY</a></li>
           <li><a href="https://www.srsdraft.co.uk/shozna-2026/contact">CONTACT US</a></li>
         </ul>
       </div>
