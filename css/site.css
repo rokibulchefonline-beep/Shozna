@@ -4236,5 +4236,153 @@ a.award-desc:hover .award-link-icon {
   flex-wrap: wrap;
 }
 
+/* ==========================================================================
+   Takeaway Menu Page Styles (`/takeaway-menu`)
+   ========================================================================== */
+
+/* --- Dual Actions Row for Menu Cards --------------------------------------- */
+.menu-lib-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.menu-lib-card__btn--gold {
+  background: var(--c-gold, #c5a880);
+  color: #0b0a09;
+  border-color: var(--c-gold, #c5a880);
+  font-weight: 700;
+}
+
+.menu-lib-card__btn--gold:hover {
+  background: #d4b993;
+  border-color: #d4b993;
+  color: #000000;
+}
+
+/* --- Section: How to Order Takeaway from Shozna (5 Steps) ------------------ */
+.takeaway-process-section {
+  position: relative;
+  isolation: isolate;
+  background-color: #0b0a09;
+  background-image: url('../media/pattern-4.png');
+  background-size: 180px;
+  border-top: 1px solid rgba(197, 168, 128, 0.15);
+  border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+  padding-block: clamp(4.5rem, 7.5vw, 6.5rem);
+}
+
+.takeaway-process-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--s-3);
+  margin-bottom: clamp(2.5rem, 4vw, 3.75rem);
+  flex-wrap: wrap;
+}
+
+.takeaway-process-intro__text {
+  max-width: 520px;
+}
+
+.takeaway-process-intro__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0.5rem 0 0;
+}
+
+.takeaway-process-intro__lead {
+  max-width: 440px;
+  color: #a39c90;
+  font-size: clamp(0.88rem, 1.1vw, 0.98rem);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.takeaway-process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(1.25rem, 2vw, 2rem);
+  margin-bottom: clamp(2.5rem, 4vw, 3.75rem);
+  position: relative;
+}
+
+.takeaway-process-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(22, 20, 18, 0.6);
+  border: 1px solid rgba(228, 197, 144, 0.16);
+  border-radius: 6px;
+  padding: clamp(1.25rem, 1.75vw, 1.75rem);
+  transition: transform var(--dur) var(--ease-out),
+              border-color var(--dur) var(--ease-out),
+              background var(--dur) var(--ease-out),
+              box-shadow var(--dur) var(--ease-out);
+}
+
+.takeaway-process-step:hover {
+  transform: translateY(-4px);
+  border-color: rgba(228, 197, 144, 0.45);
+  background: rgba(28, 25, 22, 0.85);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+}
+
+.takeaway-step-num {
+  font-family: var(--font-primary);
+  font-size: clamp(2.2rem, 3.2vw, 3rem);
+  font-weight: 300;
+  color: #e4c590;
+  line-height: 1;
+  margin-bottom: 0.85rem;
+  display: block;
+}
+
+.takeaway-step-title {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  margin-bottom: 0.65rem;
+}
+
+.takeaway-step-desc {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: #a39c90;
+  margin: 0;
+}
+
+.takeaway-process-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1100px) {
+  .takeaway-process-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .takeaway-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .takeaway-process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 
