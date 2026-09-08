@@ -3304,14 +3304,15 @@ a.award-desc:hover .award-link-icon {
 }
 
 .inner-banner__title {
-  font-family: var(--font-accent, var(--font-primary));
-  font-size: clamp(2.2rem, 5.2vw, 3.85rem);
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-family: var(--font-primary, "Raleway", sans-serif);
+  font-size: clamp(2.1rem, 1.40rem + 2.50vw, 3.65rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-transform: none;
   color: #ffffff;
-  line-height: 1.15;
-  margin: 0.5rem 0 0.75rem;
+  line-height: 1.2;
+  margin: 0.4rem 0 0.75rem;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.85);
 }
 
 .inner-banner__sep {
@@ -4003,13 +4004,14 @@ a.award-desc:hover .award-link-icon {
 
 .inner-banner--menu .inner-banner__title {
   font-family: var(--font-primary, "Raleway", sans-serif);
-  font-size: clamp(1.4rem, 4.2vw, 3.75rem);
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: clamp(1.85rem, 4.2vw, 3.65rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-transform: none;
   color: #ffffff;
-  line-height: 1.15;
-  margin: 0.45rem 0 0.85rem;
+  line-height: 1.2;
+  margin: 0.4rem 0 0.75rem;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.85);
   white-space: nowrap;
   display: inline-block;
 }
@@ -4017,9 +4019,9 @@ a.award-desc:hover .award-link-icon {
 .hero-title-italic-gold {
   font-family: inherit;
   font-style: italic;
-  font-weight: 800;
+  font-weight: 400;
   color: var(--c-gold, #dfbf86);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   margin-left: 0.25rem;
   white-space: nowrap;
 }
